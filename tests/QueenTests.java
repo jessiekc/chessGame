@@ -3,7 +3,15 @@ import main.*;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+/**
+ * 
+ * @author kaichenle
+ *
+ */
 public class QueenTests {
+	/**
+	 * test on moveChess
+	 */
 	@Test
 	public void shouldMoveQueen(){
 		Board board = new Board();

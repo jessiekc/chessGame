@@ -1,6 +1,17 @@
 package main;
 
+/**
+ * 
+ * @author kaichenle
+ *
+ */
 public class Bishop extends Pieces {
+	/**
+	 * constructor
+	 * @param x xCoord
+	 * @param y yCoord
+	 * @param player player 1 or 2
+	 */
 	public Bishop(int x, int y, int player) {
 		super(x, y, player);
 		this.type = "Bishop";

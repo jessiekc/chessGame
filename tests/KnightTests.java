@@ -1,9 +1,18 @@
 package tests;
 import main.*;
+
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+/**
+ * 
+ * @author kaichenle
+ *
+ */
 public class KnightTests {
+	/**
+	 * test on moveChess
+	 */
 	@Test
 	public void shouldMoveKnight(){
 		Board board = new Board();

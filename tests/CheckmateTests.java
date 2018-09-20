@@ -1,9 +1,18 @@
 package tests;
 import main.*;
+
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+/**
+ * 
+ * @author kaichenle
+ *
+ */
 public class CheckmateTests {
+	/**
+	 * test on isCheckedByRookOrQueen
+	 */
 	@Test
 	public void isCheckedByHelperTest(){
 		Board board = new Board();
@@ -35,6 +44,9 @@ public class CheckmateTests {
 		
 	}
 	
+	/**
+	 * test on couldStopBishopOrQueen
+	 */
 	@Test
 	public void couldStopBishopOrQueenHelperTest(){
 		Board board = new Board();
@@ -68,6 +80,9 @@ public class CheckmateTests {
 		board.board[4][4] = new King (4, 4, 1);
 	}
 	
+	/**
+	 * test on couldStopRookOrQueen
+	 */
 	@Test
 	public void couldStopRookOrQueenHelperTest(){
 
@@ -91,6 +106,9 @@ public class CheckmateTests {
 		assertFalse("test on couldStopRookOrQueen", board.couldStopRookOrQueen(4, 3, 4, 0));
 	}
 	
+	/**
+	 * test on rookOrQueenChecker
+	 */
 	@Test
 	public void rookOrQueenCheckerHelperTest() {
 		Board board = new Board();
@@ -115,6 +133,9 @@ public class CheckmateTests {
 		assertFalse("test on rookOrQueenCheckerHelperTest",(board.rookOrQueenChecker(board.getChessByPos(4, 0)))==null);
 	}
 	
+	/**
+	 * test on knightChecker
+	 */
 	@Test
 	public void knightCheckerHelperTest() {
 		Board board = new Board();
@@ -152,6 +173,9 @@ public class CheckmateTests {
 		board.removePieces(3, 2);
 	}
 	
+	/**
+	 * test on pawnChecker
+	 */
 	@Test
 	public void pawnCheckerHelperTest() {
 		Board board = new Board();
@@ -181,6 +205,9 @@ public class CheckmateTests {
 		board.removePieces(5, 5);
 	}
 	
+	/**
+	 * basic test on isCheckmate 
+	 */
 	@Test
 	public void basicCheckmateTest(){
 		Board board = new Board();

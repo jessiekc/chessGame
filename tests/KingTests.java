@@ -7,8 +7,15 @@ import org.junit.Test;
 
 //Given[ExplainYourInput]When[WhatIsDone]Then[ExpectedResult]
 //ordersShouldBeCreated
-
+/**
+ * 
+ * @author kaichenle
+ *
+ */
 public class KingTests {
+	/**
+	 * test on moveChess
+	 */
 	@Test
 	public void shouldMoveKing(){
 		Board board = new Board();

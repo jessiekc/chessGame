@@ -1,10 +1,19 @@
 package tests;
 import main.*;
+
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+/**
+ * 
+ * @author kaichenle
+ *
+ */
 public class PawnTests {
+	/**
+	 * test on moveChess
+	 */
 	@Test
 	public void shouldMovePawn(){
 		Board board = new Board();

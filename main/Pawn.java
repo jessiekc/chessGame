@@ -1,13 +1,26 @@
 package main;
 
+/**
+ * 
+ * @author kaichenle
+ *
+ */
 public class Pawn extends Pieces {
 	boolean firstMove = true;
+	/**
+	 * constructor
+	 * @param x xCoord
+	 * @param y yCoord
+	 * @param player player 1 or 2
+	 */
 	public Pawn(int x, int y, int player) {
 		super(x, y, player);
 		this.firstMove = true;
 		this.type = "Pawn";
 	}
-	//see if the chess move against convention without consider other chesses
+	/**
+	 * see if the chess move against convention without consider other chesses
+	 */
 	public boolean isValidMove(int newX, int newY){
 		if (outOfBoundryOrNotMove(newX, newY)) {
 			return false;
