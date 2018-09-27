@@ -30,4 +30,13 @@ public class KingTests {
 		assertTrue("King moved 1 step diagnal", board.moveChess(4, 6, 3, 5));
 		assertFalse("King not moving", board.moveChess(3, 5, 3, 5));
 	}
+
+	//this function will never be called, implement it because the abstract.
+	@Test
+	public void isMovableKing(){
+		Board board = new Board();
+		board.getChessByPos(4,7).isMovable(board);
+		board.getChessByPos(4,7).couldBeStopped(4,6,board);
+		board.moveChess(4, 7, 4, 8);
+	}
 }
