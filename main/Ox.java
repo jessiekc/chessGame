@@ -68,14 +68,26 @@ public class Ox extends Pieces{
      * @return true if there is a piece exists that can stop the chess otherwise false
      */
     public  boolean couldBeStopped(int newX, int newY, Board board){
+        int oldX = this.x;
+        int oldY = this.y;
         if (y < newY) {
             for(int i = y + 1; i < newY; i++) {
-                if(board.isChecked(board.getChessByPos(x, i)) > 0)return true;
+                board.moveChess(oldX, oldY, x, i);
+                if(board.isChecked(board.getChessByPos(x, i)) > 0){
+                    board.moveChess(x, i, oldX, oldY);
+                    return true;
+                }
+                board.moveChess(x, i, oldX, oldY);
             }
         }
         else if (y > newY) {
             for(int i = y - 1; i > newY; i--) {
-                if(board.isChecked(board.getChessByPos(x, i)) > 0)return true;
+                board.moveChess(oldX, oldY, x, i);
+                if(board.isChecked(board.getChessByPos(x, i)) > 0) {
+                    board.moveChess(x, i, oldX, oldY);
+                    return true;
+                }
+                board.moveChess(x, i, oldX, oldY);
             }
         }
         return false;

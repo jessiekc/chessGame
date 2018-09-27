@@ -68,14 +68,26 @@ public class Crab extends Pieces {
      * @return true if there is a piece exists that can stop the chess otherwise false
      */
     public  boolean couldBeStopped(int newX, int newY, Board board){
+        int oldX = this.x;
+        int oldY = this.y;
         if(x < newX) {
             for(int i = x + 1; i < newX; i++) {
-                if(board.isChecked(board.getChessByPos(i, y)) > 0)return true;
+                board.moveChess(oldX, oldY, i, y);
+                if(board.isChecked(board.getChessByPos(i, y)) > 0){
+                    board.moveChess(i, y, oldX, oldY);
+                    return true;
+                }
+                board.moveChess(i, y, oldX, oldY);
             }
         }
         else if (x > newX) {
             for(int i = x - 1; i > newX; i--) {
-                if(board.isChecked(board.getChessByPos(i, y)) > 0)return true;
+                board.moveChess(oldX, oldY, i, y);
+                if(board.isChecked(board.getChessByPos(i, y)) > 0){
+                    board.moveChess(i, y, oldX, oldY);
+                    return true;
+                }
+                board.moveChess(i, y, oldX, oldY);
             }
         }
         return false;

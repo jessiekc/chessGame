@@ -508,6 +508,7 @@ public class Board {
 		if(king == null)return 0;
 		int numRookOrQueen = this.isCheckedByRookOrQueen(king).size();
 		int numBishopOrQueen = this.isCheckedByBishopOrQueen(king).size();
+
 		int numKnight = this.isCheckedByKnight(king).size();
 		int numPawn = this.isCheckedByPawn(king).size();
 		int numCrab = this.isCheckedByCrab(king).size();
