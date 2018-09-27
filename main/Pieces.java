@@ -8,8 +8,8 @@ public abstract class Pieces {
 	int x = -1;
 	int y = -1;
 	String id = "";
-	int player = -1;
-	String type = "";
+	public int player = -1;
+	public String type = "";
 	
 	/**
 	 * Constructor of the super class
@@ -46,6 +46,11 @@ public abstract class Pieces {
 	 * @return true when it is valid to move by convention
 	 */
 	public abstract boolean  isValidMove(int newX, int newY);
-	
-	
+
+
+	public abstract boolean validMove(int newX, int newY, Board board);
+
+	public abstract boolean couldBeStopped(int newX, int newY, Board board);
+
+	public abstract boolean isMovable(Board board);
 }
