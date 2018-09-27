@@ -29,18 +29,18 @@ public class CheckmateTests {
 		board.removePieces(4, 1);
 		board.board[4][1]= new Rook(4, 1, 2);
 		//test isCheckedByRookOrQueen 
-		assertEquals(1, board.isCheckedByRookOrQueen(board.getKing(1)));
+		assertEquals(1, board.isCheckedByRookOrQueen(board.getKing(1)).size());
 		board.removePieces(4, 1);
 		board.board[2][5]= new Queen(2, 5, 1);
 		board.board[3][6]= new Pawn(3, 6, 1);
 		//test isCheckedBishopOrQueen 
-		assertEquals(0, board.isCheckedByBishopOrQueen(board.getKing(2)));
+		assertEquals(0, board.isCheckedByBishopOrQueen(board.getKing(2)).size());
 		board.removePieces(3, 6);
-		assertEquals(1, board.isCheckedByBishopOrQueen(board.getKing(2)));
+		assertEquals(1, board.isCheckedByBishopOrQueen(board.getKing(2)).size());
 		//test isCheckedByKnight
 		board.removePieces(2, 5);
 		board.board[5][5]= new Knight(5, 5, 1);
-		assertEquals(1, board.isCheckedByKnight(board.getKing(2)));
+		assertEquals(1, board.isCheckedByKnight(board.getKing(2)).size());
 		
 	}
 	
@@ -62,20 +62,21 @@ public class CheckmateTests {
 		}
 		board.board[2][5] = new Queen (2, 5, 1);
 		board.board[2][6] = new Rook (2, 6, 2);
-		assertTrue("test on couldStopBishopOrQueen", board.couldStopBishopOrQueen(2, 5, 4, 7));
+		assertTrue("test on couldStopBishopOrQueen", board.getChessByPos(2,5).couldBeStopped(4, 7, board));
 		board.removePieces(2, 6);
-		assertFalse("test on couldStopBishopOrQueen", board.couldStopBishopOrQueen(2, 5, 4, 7));
+		assertFalse("test on couldStopBishopOrQueen", board.getChessByPos(2,5).couldBeStopped(4, 7, board));
 		board.removePieces(2, 5);
 		board.board[6][5] = new Queen (6, 5, 1);
-		assertFalse("test on couldStopBishopOrQueen", board.couldStopBishopOrQueen(6, 5, 4, 7));
+		assertFalse("test on couldStopBishopOrQueen",board.getChessByPos(6,5).couldBeStopped(4, 7, board));
 		board.removePieces(6, 5);
-		board.removePieces(3, 2);
-		board.removePieces(5, 2);
-		board.board[2][3] = new Queen (2, 2, 2);
-		assertFalse("test on couldStopBishopOrQueen", board.couldStopBishopOrQueen(2, 2, 4, 0));
+//		board.removePieces(3, 1);
+//		board.removePieces(5, 1);
+		board.board[2][2] = new Queen (2, 2, 2);
+		System.out.print(board.getChessByPos(2,2));
+		assertFalse("test on couldStopBishopOrQueen", board.getChessByPos(2,2).couldBeStopped(3, 1, board));
 		board.removePieces(2, 2);
-		board.board[6][3] = new Queen (6, 2, 2);
-		assertFalse("test on couldStopBishopOrQueen", board.couldStopBishopOrQueen(6, 2, 4, 0));
+		board.board[6][2] = new Queen (6, 2, 2);
+		assertFalse("test on couldStopBishopOrQueen", board.getChessByPos(6,2).couldBeStopped(4, 0, board));
 		board.removePieces(4, 0);
 		board.board[4][4] = new King (4, 4, 1);
 	}
@@ -98,12 +99,12 @@ public class CheckmateTests {
 			board.removePieces(i, 7);
 		}
 		board.board[7][7] = new Rook (7, 7, 1);
-		assertFalse("test on couldStopRookOrQueen", board.couldStopRookOrQueen(7, 7, 4, 7));
+		assertFalse("test on couldStopRookOrQueen", board.getChessByPos(7,7).couldBeStopped(4, 7, board));
 		board.board[4][3] = new Rook (4, 3, 1);
-		assertFalse("test on couldStopRookOrQueen", board.couldStopRookOrQueen(4, 3, 4, 7));
+		assertFalse("test on couldStopRookOrQueen", board.getChessByPos(4,3).couldBeStopped(4, 7, board));
 		board.removePieces(4, 1);
 		board.board[4][3] = new Rook (4, 3, 2);
-		assertFalse("test on couldStopRookOrQueen", board.couldStopRookOrQueen(4, 3, 4, 0));
+		assertFalse("test on couldStopRookOrQueen", board.getChessByPos(4,3).couldBeStopped(4, 0, board));
 	}
 	
 	/**
@@ -123,14 +124,14 @@ public class CheckmateTests {
 			board.removePieces(i, 7);
 		}
 		board.board[7][7] = new Rook (7, 7, 1);
-		assertFalse("test on rookOrQueenCheckerHelperTest",(board.rookOrQueenChecker(board.getChessByPos(4, 7)))==null);
+		assertFalse("test on rookOrQueenCheckerHelperTest",(board.isCheckedByRookOrQueen(board.getChessByPos(4, 7)).size())==0);
 		board.removePieces(7, 7);
 		board.board[4][4] = new Rook (4, 4, 1);
-		assertFalse("test on rookOrQueenCheckerHelperTest",(board.rookOrQueenChecker(board.getChessByPos(4, 7)))==null);
+		assertFalse("test on rookOrQueenCheckerHelperTest",(board.isCheckedByRookOrQueen(board.getChessByPos(4, 7)).size())==0);
 		board.removePieces(4, 4);
 		board.removePieces(4, 1);
 		board.board[4][3] = new Rook (4, 3, 2);
-		assertFalse("test on rookOrQueenCheckerHelperTest",(board.rookOrQueenChecker(board.getChessByPos(4, 0)))==null);
+		assertFalse("test on rookOrQueenCheckerHelperTest",(board.isCheckedByRookOrQueen(board.getChessByPos(4, 0)).size())==0);
 	}
 	
 	/**
@@ -151,25 +152,25 @@ public class CheckmateTests {
 		}
 		board.board[4][4]= new King (4, 4, 1);
 		board.board[6][5] = new Knight (6, 5, 2);
-		assertFalse("test on knightCheckerHelperTest",(board.knightChecker(board.getChessByPos(4, 4)))==null);
+		assertFalse("test on knightCheckerHelperTest",(board.isCheckedByKnight(board.getChessByPos(4, 4)).size())==0);
 		board.removePieces(6, 5);
 		board.board[2][5] = new Knight (2, 5, 2);
-		assertFalse("test on knightCheckerHelperTest",(board.knightChecker(board.getChessByPos(4, 4)))==null);
+		assertFalse("test on knightCheckerHelperTest",(board.isCheckedByKnight(board.getChessByPos(4, 4)).size())==0);
 		board.removePieces(2, 5);
 		board.board[6][3] = new Knight (6, 3, 2);
-		assertFalse("test on knightCheckerHelperTest",(board.knightChecker(board.getChessByPos(4, 4)))==null);
+		assertFalse("test on knightCheckerHelperTest",(board.isCheckedByKnight(board.getChessByPos(4, 4)).size())==0);
 		board.removePieces(6, 3);
 		board.board[5][6] = new Knight (5, 6, 2);
-		assertFalse("test on knightCheckerHelperTest",(board.knightChecker(board.getChessByPos(4, 4)))==null);
+		assertFalse("test on knightCheckerHelperTest",(board.isCheckedByKnight(board.getChessByPos(4, 4)).size())==0);
 		board.removePieces(5, 6);
 		board.board[3][6] = new Knight (3, 6, 2);
-		assertFalse("test on knightCheckerHelperTest",(board.knightChecker(board.getChessByPos(4, 4)))==null);
+		assertFalse("test on knightCheckerHelperTest",(board.isCheckedByKnight(board.getChessByPos(4, 4)).size())==0);
 		board.removePieces(3, 6);
 		board.board[5][2] = new Knight (5, 2, 2);
-		assertFalse("test on knightCheckerHelperTest",(board.knightChecker(board.getChessByPos(4, 4)))==null);
+		assertFalse("test on knightCheckerHelperTest",(board.isCheckedByKnight(board.getChessByPos(4, 4)).size())==0);
 		board.removePieces(5, 2);
 		board.board[3][2] = new Knight (3, 2, 2);
-		assertFalse("test on knightCheckerHelperTest",(board.knightChecker(board.getChessByPos(4, 4)))==null);
+		assertFalse("test on knightCheckerHelperTest",(board.isCheckedByKnight(board.getChessByPos(4, 4)).size())==0);
 		board.removePieces(3, 2);
 	}
 	
@@ -191,17 +192,17 @@ public class CheckmateTests {
 		}
 		board.board[4][4] = new King (4, 4, 2);
 		board.board[3][3] = new Pawn (3, 3, 1);
-		assertFalse("test on pawnCheckerHelperTest",(board.pawnChecker(board.getChessByPos(4, 4)))==null);
+		assertFalse("test on pawnCheckerHelperTest",(board.isCheckedByPawn(board.getChessByPos(4, 4)).size())==0);
 		board.removePieces(3, 3);
 		board.board[5][3] = new Pawn (5, 3, 1);
-		assertFalse("test on pawnCheckerHelperTest",(board.pawnChecker(board.getChessByPos(4, 4)))==null);
+		assertFalse("test on pawnCheckerHelperTest",(board.isCheckedByPawn(board.getChessByPos(4, 4)).size())==0);
 		board.removePieces(5, 3);
 		board.board[4][4] = new King (4, 4, 1);
 		board.board[3][5] = new Pawn (3, 5, 2);
-		assertFalse("test on pawnCheckerHelperTest",(board.pawnChecker(board.getChessByPos(4, 4)))==null);
+		assertFalse("test on pawnCheckerHelperTest",(board.isCheckedByPawn(board.getChessByPos(4, 4)).size())==0);
 		board.removePieces(3, 5);
 		board.board[5][5] = new Pawn (5, 5, 2);
-		assertFalse("test on pawnCheckerHelperTest",(board.pawnChecker(board.getChessByPos(4, 4)))==null);
+		assertFalse("test on pawnCheckerHelperTest",(board.isCheckedByPawn(board.getChessByPos(4, 4)).size())==0);
 		board.removePieces(5, 5);
 	}
 	
