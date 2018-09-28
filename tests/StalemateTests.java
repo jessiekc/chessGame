@@ -26,10 +26,10 @@ public class StalemateTests {
 			board.removePieces(i, 7);
 		}
 		board.board[6][7] = new Bishop(6, 7, 2);
-		assertTrue("movableBishopOrQueen", board.movableBishopOrQueen(board.getChessByPos(6, 7)));
+		assertTrue("movableBishopOrQueen", board.getChessByPos(6, 7).isMovable(board));
 		board.board[5][6] = new Pawn(5, 6, 2);
 		board.board[7][6] = new Pawn(7, 6, 2);
-		assertFalse("movableBishopOrQueen", board.movableBishopOrQueen(board.getChessByPos(6, 7)));
+		assertFalse("movableBishopOrQueen", board.getChessByPos(6, 7).isMovable(board));
 	}
 	
 	/**
@@ -49,10 +49,10 @@ public class StalemateTests {
 			board.removePieces(i, 7);
 		}
 		board.board[7][7] = new Rook(7, 7, 2);
-		assertTrue("movableRookOrQueen", board.movableRookOrQueen(board.getChessByPos(7, 7)));
+		assertTrue("movableRookOrQueen", board.getChessByPos(7, 7).isMovable(board));
 		board.board[6][7] = new Pawn(6, 7, 2);
 		board.board[7][6]= new Pawn(7, 6, 2);
-		assertFalse("movableRookOrQueen", board.movableRookOrQueen(board.getChessByPos(7, 7)));
+		assertFalse("movableRookOrQueen", board.getChessByPos(7, 7).isMovable(board));
 		
 	}
 	
@@ -73,10 +73,10 @@ public class StalemateTests {
 			board.removePieces(i, 7);
 		}
 		board.board[7][7] = new Knight(7, 7, 2);
-		assertTrue("movableKnight", board.movableKnight(board.getChessByPos(7, 7)));
+		assertTrue("movableKnight", board.getChessByPos(7, 7).isMovable(board));
 		board.board[5][6] = new Pawn(5, 6, 2);
 		board.board[6][5]= new Pawn(6, 5, 2);
-		assertFalse("movableKnight", board.movableKnight(board.getChessByPos(7, 7)));
+		assertFalse("movableKnight", board.getChessByPos(7, 7).isMovable(board));
 	}
 	
 	/**
@@ -96,13 +96,13 @@ public class StalemateTests {
 			board.removePieces(i, 7);
 		}
 		board.board[7][7] = new Pawn(7, 7, 2);
-		assertTrue("movablePawn", board.movablePawn(board.getChessByPos(7, 7)));
+		assertTrue("movablePawn", board.getChessByPos(7, 7).isMovable(board));
 		board.board[7][6] = new Pawn(7, 6, 2);
-		assertFalse("movablePawn", board.movablePawn(board.getChessByPos(7, 7)));
+		assertFalse("movablePawn", board.getChessByPos(7, 7).isMovable(board));
 		board.board[3][3] = new Pawn(3, 3, 1);
-		assertTrue("movablePawn", board.movablePawn(board.getChessByPos(3, 3)));
+		assertTrue("movablePawn", board.getChessByPos(3, 3).isMovable(board));
 		board.board[3][4] = new Pawn(3, 4, 1);
-		assertTrue("movablePawn", board.movablePawn(board.getChessByPos(3, 4)));
+		assertTrue("movablePawn", board.getChessByPos(3, 4).isMovable(board));
 	}
 	
 	/**
@@ -126,7 +126,7 @@ public class StalemateTests {
 		board.board[2][6] = new Rook(2, 6, 1);
 		assertTrue("Stalemate when king can go nowhere", board.isStalemate(2));
 		board.board[4][5] = new Pawn(4, 5, 2);
-		assertFalse("A chess otherthen king can go", board.isStalemate(2));
+		assertFalse("A chess other then king can go", board.isStalemate(2));
 		board.removePieces(2, 6);
 		assertFalse("King is not in stalemate", board.isStalemate(2));
 	} 

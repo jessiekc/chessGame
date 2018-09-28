@@ -1,5 +1,6 @@
 package main;
 
+import java.util.ArrayList;
 /**
  * 
  * @author kaichenle
@@ -78,208 +79,8 @@ public class Board {
 	public void removePieces(int x, int y) {
 		board[x][y] = null;
 	}
-	
-	//
-	//helper function in general
-	//
-	
-	/**
-	 * Helper functions check if it is a valid path to move king.
-	 * It will be called inside moveChess with isValidMove in each pieces subclass.
-	 * This will check if there are pieces on the board that will influence the fact if it is valid to move chess
-	 * @param x start xCoord
-	 * @param y start yCoord
-	 * @param newX end yCoord
-	 * @param newY end yCoord
-	 * @return true if valid otherwise false
-	 */
-	public boolean validMoveKing(int x, int y, int newX, int newY) {
-		if(newX >= 8 || newX < 0 || newY >= 8 || newY < 0) {
-			return false;
-		}
-		if (this.samePlayer(x, y, newX, newY)) {
-			return false;
-		}
-		return true;
-	}
-	
-	/**
-	 * Helper functions check if it is a valid path to move Rook.
-	 * It will be called inside moveChess with isValidMove in each pieces subclass.
-	 * This will check if there are pieces on the board that will influence the fact if it is valid to move chess
-	 * @param x start xCoord
-	 * @param y start yCoord
-	 * @param newX end yCoord
-	 * @param newY end yCoord
-	 * @return true if valid otherwise false
-	 */
-	public boolean validMoveRook(int x, int y, int newX, int newY) {
-		if(newX >= 8 || newX < 0 || newY >= 8 || newY < 0) {
-			return false;
-		}
-		
-		if ( newX < x) {
-			for (int i = x-1; i > newX; i--) {
-				if (this.getChessByPos(i, y)!=null){
-					return false;
-				}
-			}
-		}
-		else if (newX > x) {
-			for (int i = x + 1; i < newX; i++) {
-				if (this.getChessByPos(i, y)!=null){
-					return false;
-				}
-			}
-		}
-		else if ( newY < y) {
-			for(int i = y-1; i > newY; i--) {
-				if(this.getChessByPos(x, i)!=null) {
-					return false;
-				}
-			}
-		}
-		else if (newY > y) {
-			for(int i = y+1; i< newY; i++) {
-				if(this.getChessByPos(x, i)!=null) {
-					return false;
-				}
-			}
-		}
-		if (this.samePlayer(x, y, newX, newY)) {
-			return false;
-		}
-		return true;
-	}
-	
-	/**
-	 * Helper functions check if it is a valid path to move Bishop.
-	 * It will be called inside moveChess with isValidMove in each pieces subclass.
-	 * This will check if there are pieces on the board that will influence the fact if it is valid to move chess
-	 * @param x start xCoord
-	 * @param y start yCoord
-	 * @param newX end yCoord
-	 * @param newY end yCoord
-	 * @return true if valid otherwise false
-	 */
-	public boolean validMoveBishop(int x, int y, int newX, int newY) {
-		if(newX >= 8 || newX < 0 || newY >= 8 || newY < 0) {
-			return false;
-		}
-		if(x < newX && y > newY) {
-			for(int i = 1; i< Math.abs(x-newX); i++) {
-				if(this.getChessByPos(x+i, y-i)!=null) {
-					return false;
-				}
-			}
-		}
-		if(x > newX && y > newY) {
-			for(int i = 1; i< Math.abs(x-newX); i++) {
-				if(this.getChessByPos(x-i, y-i)!=null) {
-					return false;
-				}
-			}
-		}
-		if(x < newX && y < newY) {
-			for(int i = 1; i< Math.abs(x-newX); i++) {
-				if(this.getChessByPos(x+i, y+i)!=null) {
-					return false;
-				}
-			}
-		}
-		if(x > newX && y < newY) {
-			for(int i = 1; i< Math.abs(x-newX); i++) {
-				if(this.getChessByPos(x-i, y+i)!=null) {
-					return false;
-				}
-			}
-		}
-		if (this.samePlayer(x, y, newX, newY)) {
-			return false;
-		}
-		return true;
-	}
-	
-	/**
-	 * Helper functions check if it is a valid path to move Queen.
-	 * It will be called inside moveChess with isValidMove in each pieces subclass.
-	 * This will check if there are pieces on the board that will influence the fact if it is valid to move chess
-	 * @param x start xCoord
-	 * @param y start yCoord
-	 * @param newX end yCoord
-	 * @param newY end yCoord
-	 * @return true if valid otherwise false
-	 */
-	public boolean validMoveQueen(int x, int y, int newX, int newY) {
-		if(newX >= 8 || newX < 0 || newY >= 8 || newY < 0) {
-			return false;
-		}
-		if(validMoveBishop(x,y,newX,newY)||validMoveRook(x, y, newX, newY)) {
-			return true;
-		}
-		if (this.samePlayer(x, y, newX, newY)) {
-			return false;
-		}
-		return false;
-	}
-	
-	/**
-	 * Helper functions check if it is a valid path to move knight.
-	 * It will be called inside moveChess with isValidMove in each pieces subclass.
-	 * This will check if there are pieces on the board that will influence the fact if it is valid to move chess
-	 * @param x start xCoord
-	 * @param y start yCoord
-	 * @param newX end yCoord
-	 * @param newY end yCoord
-	 * @return true if valid otherwise false
-	 */
-	public boolean validMoveKnight(int x, int y, int newX, int newY) {
-		if(newX >= 8 || newX < 0 || newY >= 8 || newY < 0) {
-			return false;
-		}
-		if (this.samePlayer(x, y, newX, newY)) {
-			return false;
-		}
-		
-		return true;
-	}
-	
-	/**
-	 * Helper functions check if it is a valid path to move Pawn.
-	 * It will be called inside moveChess with isValidMove in each pieces subclass.
-	 * This will check if there are pieces on the board that will influence the fact if it is valid to move chess
-	 * @param x start xCoord
-	 * @param y start yCoord
-	 * @param newX end yCoord
-	 * @param newY end yCoord
-	 * @return true if valid otherwise false
-	 */
-	public boolean validMovePawn(int x, int y, int newX, int newY) {
-		if(newX >= 8 || newX < 0 || newY >= 8 || newY < 0) {
-			return false;
-		}
-		if(x == newX) {
-			if(this.getChessByPos(newX, newY)!=null) {
-				return false;
-			}
-			if(Math.abs(newY-y)==2) {
-				if(this.getChessByPos(newX, (newY+y)/2)!=null) {
-					return false;
-				}
-			}
-		}
-		else {
-			if (this.samePlayer(x, y, newX, newY)) {
-				return false;
-			}
-			if (this.getChessByPos(newX, newY) == null) {//go diagnose must capture something
-				return false;
-			}
-			return true;
-		}
-		return true;
-	}
-	
+
+
 	/**
 	 * function move pieces from (x, y) and (newX, new)
 	 * it will check if it is valid before moving the piece
@@ -297,40 +98,11 @@ public class Board {
 		if(this.getChessByPos(x, y) == null) {
 			return false;
 		}
-		if(this.getChessByPos(x, y).isValidMove(newX, newY) == false) {//against rule
+		if(this.getChessByPos(x, y).isValidMove(newX, newY) == false||this.getChessByPos(x,y).validMove(newX, newY,
+				this)==false) {
 			return false;
 		}
-		
-		if(this.getChessByPos(x, y).type == "King") {
-			if(this.validMoveKing(x, y, newX, newY) == false) {	
-				
-				return false;
-			}
-		}
-		else if(this.getChessByPos(x, y).type == "Rook") {
-			if(this.validMoveRook(x, y, newX, newY) == false) {
-				return false;
-			}
-		}
-		else if(this.getChessByPos(x, y).type == "Bishop") {
-			if(this.validMoveBishop(x, y, newX, newY) == false) {
-				return false;
-			}
-		}
-		else if(this.getChessByPos(x, y).type == "Queen") {
-			if(this.validMoveQueen(x, y, newX, newY) == false) {
-				return false;
-			}
-		}
-		else if(this.getChessByPos(x, y).type == "Knight") {
-			if(this.validMoveKnight(x, y, newX, newY) == false) {
-				return false;
-			}
-		}
-		else if(this.getChessByPos(x, y).type == "Pawn") {
-			if(this.validMovePawn(x, y, newX, newY) == false) {
-				return false;
-			}
+		if(this.getChessByPos(x, y).type == "Pawn"){
 			((Pawn)this.getChessByPos(x, y)).firstMove = false;
 		}
 		board[newX][newY]=board[x][y];
@@ -365,24 +137,103 @@ public class Board {
 		}
 		return null;
 	}
-	
-	
+
+	/**
+	 * helper functions check if the chess is checked by Crab
+	 * @param checkingPiece the piece be checked
+	 * @return a arraylist with all checker
+	 */
+	public ArrayList<Pieces> isCheckedByCrab(Pieces checkingPiece) {
+		int x = checkingPiece.x;
+		int y = checkingPiece.y;
+		ArrayList<Pieces> checkerList = new ArrayList<Pieces>();
+		for(int i = x + 1; i < 8; i++) {
+			if(this.getChessByPos(i, y)!=null) {
+				if(this.getChessByPos(i, y).player == checkingPiece.player) {
+					break;
+				}
+				else if(this.getChessByPos(i, y) instanceof Crab){
+					checkerList.add(this.getChessByPos(i, y));
+					break;
+				}
+				else {
+					break;
+				}
+			}
+		}
+		for(int i = x - 1; i >= 0; i--) {
+			if(this.getChessByPos(i, y)!=null) {
+				if(this.getChessByPos(i, y).player == checkingPiece.player) {
+					break;
+				}
+				else if(this.getChessByPos(i, y) instanceof Crab){
+					checkerList.add(this.getChessByPos(i, y));
+					break;
+				}
+				else {
+					break;
+				}
+			}
+		}
+		return checkerList;
+	}
+	/**
+	 * helper functions check if the chess is checked by Ox
+	 * @param checkingPiece the piece be checked
+	 * @return a arraylist with all checker
+	 */
+	public ArrayList<Pieces> isCheckedByOx(Pieces checkingPiece) {
+		int x = checkingPiece.x;
+		int y = checkingPiece.y;
+		ArrayList<Pieces> checkerList = new ArrayList<Pieces>();
+		for(int i = y + 1; i < 8; i++) {
+			if(this.getChessByPos(x, i)!=null) {
+				if(this.getChessByPos(x, i).player == checkingPiece.player) {
+					break;
+				}
+				else if(this.getChessByPos(x, i) instanceof Ox){
+					checkerList.add(this.getChessByPos(x, i));
+					break;
+				}
+				else {
+					break;
+				}
+			}
+		}
+		for(int i = y - 1; i >= 0; i--) {
+			if(this.getChessByPos(x, i)!=null) {
+				if(this.getChessByPos(x, i).player == checkingPiece.player) {
+					break;
+				}
+				else if(this.getChessByPos(x, i) instanceof Ox){
+					checkerList.add(this.getChessByPos(x, i));
+					break;
+				}
+				else {
+					break;
+				}
+			}
+		}
+		return checkerList;
+	}
+
+
 	/**
 	 * helper functions check if the chess is checked by rook or queen(vertical and horizontal)
 	 * @param checkingPiece the piece be checked
-	 * @return how many checkers available
+	 * @return a arraylist with all checker
 	 */
-	public int isCheckedByRookOrQueen(Pieces checkingPiece) {
+	public ArrayList<Pieces> isCheckedByRookOrQueen(Pieces checkingPiece) {
 		int x = checkingPiece.x;
 		int y = checkingPiece.y;
-		int count = 0;
+		ArrayList<Pieces> checkerList = new ArrayList<Pieces>();
 		for(int i = x + 1; i < 8; i++) {
 			if(this.getChessByPos(i, y)!=null) {
 				if(this.getChessByPos(i, y).player == checkingPiece.player) {
 					break;
 				}
 				else if(this.getChessByPos(i, y) instanceof Queen || this.getChessByPos(i, y) instanceof Rook){
-					count++;
+					checkerList.add(this.getChessByPos(i, y));
 					break;
 				}
 				else {
@@ -396,7 +247,7 @@ public class Board {
 					break;
 				}
 				else if(this.getChessByPos(i, y) instanceof Queen || this.getChessByPos(i, y) instanceof Rook){
-					count++;
+					checkerList.add(this.getChessByPos(i, y));
 					break;
 				}
 				else {
@@ -410,7 +261,7 @@ public class Board {
 					break;
 				}
 				else if(this.getChessByPos(x, i) instanceof Queen || this.getChessByPos(x, i) instanceof Rook){
-					count++;
+					checkerList.add(this.getChessByPos(x, i));
 					break;
 				}
 				else {
@@ -424,7 +275,7 @@ public class Board {
 					break;
 				}
 				else if(this.getChessByPos(x, i) instanceof Queen || this.getChessByPos(x, i) instanceof Rook){
-					count++;
+					checkerList.add(this.getChessByPos(x, i));
 					break;
 				}
 				else {
@@ -432,19 +283,18 @@ public class Board {
 				}
 			}
 		}
-		return count;
+		return checkerList;
 	}
 	
 	/**
 	 * helper functions check if the chess is checked by bishop or queen(diaganol)
 	 * @param checkingPiece the piece be checked
-	 * @return how many checkers available
+	 * @return a arraylist with all checker
 	 */
-	public int isCheckedByBishopOrQueen(Pieces checkingPiece) {
+	public ArrayList<Pieces> isCheckedByBishopOrQueen(Pieces checkingPiece) {
+		ArrayList<Pieces> checkerList = new ArrayList<Pieces>();
 		int x = checkingPiece.x;
 		int y = checkingPiece.y;
-
-		int count = 0;
 		for(int i = 1; i < 8; i ++) {
 			int newX = x + i;
 			int newY = y + i;
@@ -458,7 +308,7 @@ public class Board {
 				break;
 			}
 			else if(this.getChessByPos(newX, newY) instanceof Bishop || this.getChessByPos(newX, newY) instanceof Queen) {
-				count++;
+				checkerList.add(this.getChessByPos(newX, newY));
 				break;
 			}
 			else {
@@ -478,7 +328,7 @@ public class Board {
 				break;
 			}
 			else if(this.getChessByPos(newX, newY) instanceof Bishop || this.getChessByPos(newX, newY) instanceof Queen) {
-				count++;
+				checkerList.add(this.getChessByPos(newX, newY));
 				break;
 			}
 			else {
@@ -498,7 +348,7 @@ public class Board {
 				break;
 			}
 			else if(this.getChessByPos(newX, newY) instanceof Bishop || this.getChessByPos(newX, newY) instanceof Queen) {
-				count++;
+				checkerList.add(this.getChessByPos(newX, newY));
 				break;
 			}
 			else {
@@ -518,31 +368,30 @@ public class Board {
 				break;
 			}
 			else if(this.getChessByPos(newX, newY) instanceof Bishop || this.getChessByPos(newX, newY) instanceof Queen) {
-				count++;
+				checkerList.add(this.getChessByPos(newX, newY));
 				break;
 			}
 			else {
 				break;
 			}
 		}
-		return count;
+		return checkerList;
 	}
 	
 	/**
 	 * helper functions check if the chess is checked by knight
 	 * @param checkingPiece the piece be checked
-	 * @return how many checkers available
+	 * @return a arraylist with all checker
 	 */
-	public int isCheckedByKnight(Pieces checkingPiece) {
+	public ArrayList<Pieces> isCheckedByKnight(Pieces checkingPiece) {
 		int x = checkingPiece.x;
 		int y = checkingPiece.y;
-
-		int count = 0;
+		ArrayList<Pieces> checkerList = new ArrayList<Pieces>();
 		if( x+2 >= 0 && x+2 < 8 && y+1 >=0 && y+1 < 8) {
 			Pieces tempPiece = this.getChessByPos(x+2, y+1);
 			if(tempPiece!=null) {
 				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					count++;
+					checkerList.add(tempPiece);
 				}
 			}
 		}
@@ -550,7 +399,7 @@ public class Board {
 			Pieces tempPiece = this.getChessByPos(x-2, y+1);
 			if(tempPiece!=null) {
 				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					count++;
+					checkerList.add(tempPiece);
 				}
 			}
 		}
@@ -558,7 +407,7 @@ public class Board {
 			Pieces tempPiece = this.getChessByPos(x+2, y-1);
 			if(tempPiece!=null) {
 				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					count++;
+					checkerList.add(tempPiece);
 				}
 			}
 		}
@@ -566,7 +415,7 @@ public class Board {
 			Pieces tempPiece = this.getChessByPos(x-2, y-1);
 			if(tempPiece!=null) {
 				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					count++;
+					checkerList.add(tempPiece);
 				}
 			}
 		}
@@ -574,7 +423,7 @@ public class Board {
 			Pieces tempPiece = this.getChessByPos(x+1, y+2);
 			if(tempPiece!=null) {
 				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					count++;
+					checkerList.add(tempPiece);
 				}
 			}
 		}
@@ -582,7 +431,7 @@ public class Board {
 			Pieces tempPiece = this.getChessByPos(x-1, y+2);
 			if(tempPiece!=null) {
 				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					count++;
+					checkerList.add(tempPiece);
 				}
 			}
 		}
@@ -590,7 +439,7 @@ public class Board {
 			Pieces tempPiece = this.getChessByPos(x+1, y-2);
 			if(tempPiece!=null) {
 				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					count++;
+					checkerList.add(tempPiece);
 				}
 			}
 		}
@@ -598,27 +447,28 @@ public class Board {
 			Pieces tempPiece = this.getChessByPos(x-1, y-2);
 			if(tempPiece!=null) {
 				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					count++;
+					checkerList.add(tempPiece);
 				}
 			}
 		}
-		return count;
+		return checkerList;
 	}	
 	
 	/**
 	 * helper functions check if the chess is checked by Pawn
 	 * @param checkingPiece the piece be checked
-	 * @return how many checkers available
+	 * @return a arraylist with all checker
 	 */
-	public int isCheckedByPawn(Pieces checkingPiece) {
+	public ArrayList<Pieces> isCheckedByPawn(Pieces checkingPiece) {
 		int x = checkingPiece.x;
 		int y = checkingPiece.y;
+		ArrayList<Pieces> checkerList = new ArrayList<Pieces>();
 		int count = 0;
 		if( x+1 >= 0 && x+1 < 8 && y+1 >=0 && y+1 < 8 && checkingPiece.player == 1) {
 			Pieces tempPiece = this.getChessByPos(x+1, y+1);
 			if(tempPiece!=null) {
 				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Pawn) {
-					count++;
+					checkerList.add(tempPiece);
 				}
 			}
 		}
@@ -626,7 +476,7 @@ public class Board {
 			Pieces tempPiece = this.getChessByPos(x-1, y+1);
 			if(tempPiece!=null) {
 				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Pawn) {
-					count++;
+					checkerList.add(tempPiece);
 				}
 			}
 		}
@@ -634,7 +484,7 @@ public class Board {
 			Pieces tempPiece = this.getChessByPos(x+1, y-1);
 			if(tempPiece!=null) {
 				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Pawn) {
-					count++;
+					checkerList.add(tempPiece);
 				}
 			}
 		}
@@ -642,398 +492,50 @@ public class Board {
 			Pieces tempPiece = this.getChessByPos(x-1, y-1);
 			if(tempPiece!=null) {
 				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Pawn) {
-					count++;
+					checkerList.add(tempPiece);
 				}
 			}
 		}
-		return count;
+		return checkerList;
 	}
 	
 	/**
 	 * helper function see if the pieces is checked or not
 	 * @param king the piece be checked usually the king
-	 * @return true if it has one or more checkers otherwise false
+	 * @return number of checkers available
 	 */
-	public boolean isChecked(Pieces king) {
-		if(king == null)return false;
-		int numRookOrQueen = this.isCheckedByRookOrQueen(king);
-		int numBishopOrQueen = this.isCheckedByBishopOrQueen(king);
-		int numKnight = this.isCheckedByKnight(king);
-		int numPawn = this.isCheckedByPawn(king);
-		if(numRookOrQueen + numBishopOrQueen + numKnight + numPawn > 0) return true;
-		else return false;
+	public int isChecked(Pieces king) {
+		if(king == null)return 0;
+		int numRookOrQueen = this.isCheckedByRookOrQueen(king).size();
+		int numBishopOrQueen = this.isCheckedByBishopOrQueen(king).size();
+
+		int numKnight = this.isCheckedByKnight(king).size();
+		int numPawn = this.isCheckedByPawn(king).size();
+		int numCrab = this.isCheckedByCrab(king).size();
+		int numOx = this.isCheckedByOx(king).size();
+		return numRookOrQueen + numBishopOrQueen + numKnight + numPawn + numCrab + numOx;
 	}
-	
-	//
-	//helper functions work when only one checker exist
-	//return the specific chess checker
-	//
+
 	/**
-	 * helper functions work when only one vertical or horizontal checker exist
-	 * @param checkingPiece the piece to be checked
-	 * @return the checkers piece that check on the input pieces
+	 * check if move the king can make it not checked
+	 * @param king the king need to be move
+	 * @param newX the new X try to move the king to
+	 * @param newY the new Y try to move the king to
+	 * @return true if move the king can make the king not being checked false otherwise
 	 */
-	public Pieces rookOrQueenChecker(Pieces checkingPiece) {
-		int x = checkingPiece.x;
-		int y = checkingPiece.y;
-		for(int i = x + 1; i < 8; i++) {
-			if(this.getChessByPos(i, y)!=null) {
-				if(this.getChessByPos(i, y).player == checkingPiece.player) {
-					break;
-				}
-				else if(this.getChessByPos(i, y) instanceof Queen || this.getChessByPos(i, y) instanceof Rook){
-					return this.getChessByPos(i, y);
-				}
-				else {
-					break;
-				}
+	public boolean moveKingCanSolve(Pieces king, int newX, int newY){
+		int oldKingX = king.x;
+		int oldKingY = king.y;
+		if(this.moveChess(king.x, king.y, newX , newY)) {
+			if(this.isChecked(king) <=0 ) {
+				this.moveChess(king.x, king.y, oldKingX , oldKingY);
+				return true;
 			}
-		}
-		for(int i = x - 1; i >= 0; i--) {
-			if(this.getChessByPos(i, y)!=null) {
-				if(this.getChessByPos(i, y).player == checkingPiece.player) {
-					break;
-				}
-				else if(this.getChessByPos(i, y) instanceof Queen || this.getChessByPos(i, y) instanceof Rook){
-					return this.getChessByPos(i, y);
-				}
-				else {
-					break;
-				}
-			}
-		}
-		for(int i = y + 1; i < 8; i++) {
-			if(this.getChessByPos(x, i)!=null) {
-				if(this.getChessByPos(x, i).player == checkingPiece.player) {
-					break;
-				}
-				else if(this.getChessByPos(x, i) instanceof Queen || this.getChessByPos(x, i) instanceof Rook){
-					return this.getChessByPos(x, i);
-				}
-				else {
-					break;
-				}
-			}
-		}
-		for(int i = y - 1; i >= 0; i--) {
-			if(this.getChessByPos(x, i)!=null) {
-				if(this.getChessByPos(x, i).player == checkingPiece.player) {
-					break;
-				}
-				else if(this.getChessByPos(x, i) instanceof Queen || this.getChessByPos(x, i) instanceof Rook){
-					return this.getChessByPos(x, i);
-				}
-				else {
-					break;
-				}
-			}
-		}
-		return null;
-	}
-	
-	/**
-	 * helper functions work when only one diaganol checker exist
-	 * @param checkingPiece the piece to be checked
-	 * @return the checkers piece that check on the input pieces
-	 */
-	public Pieces bishopOrQueenChecker(Pieces checkingPiece) {
-		int x = checkingPiece.x;
-		int y = checkingPiece.y;
-		for(int i = 0; i < 8; i ++) {
-			int newX = x + i;
-			int newY = y + i;
-			if(newX >= 8 || newX < 0 || newY >= 8 || newY < 0) {
-				break;
-			}
-			if(this.getChessByPos(newX, newY)==null) {
-				continue;
-			}
-			else if(this.getChessByPos(newX, newY).player == checkingPiece.player){
-				break;
-			}
-			else if(this.getChessByPos(newX, newY) instanceof Bishop || this.getChessByPos(newX, newY) instanceof Queen) {
-				return this.getChessByPos(newX, newY);
-			}
-			else {
-				break;
-			}
-		}
-		for(int i = 0; i < 8; i ++) {
-			int newX = x - i;
-			int newY = y + i;
-			if(newX >= 8 || newX < 0 || newY >= 8 || newY < 0) {
-				break;
-			}
-			if(this.getChessByPos(newX, newY)==null) {
-				continue;
-			}
-			else if(this.getChessByPos(newX, newY).player == checkingPiece.player){
-				break;
-			}
-			else if(this.getChessByPos(newX, newY) instanceof Bishop || this.getChessByPos(newX, newY) instanceof Queen) {
-				return this.getChessByPos(newX, newY);
-			}
-			else {
-				break;
-			}
-		}
-		for(int i = 0; i < 8; i ++) {
-			int newX = x + i;
-			int newY = y - i;
-			if(newX >= 8 || newX < 0 || newY >= 8 || newY < 0) {
-				break;
-			}
-			if(this.getChessByPos(newX, newY)==null) {
-				continue;
-			}
-			else if(this.getChessByPos(newX, newY).player == checkingPiece.player){
-				break;
-			}
-			else if(this.getChessByPos(newX, newY) instanceof Bishop || this.getChessByPos(newX, newY) instanceof Queen) {
-				return this.getChessByPos(newX, newY);
-			}
-			else {
-				break;
-			}
-		}
-		for(int i = 0; i < 8; i ++) {
-			int newX = x - i;
-			int newY = y - i;
-			if(newX >= 8 || newX < 0 || newY >= 8 || newY < 0) {
-				break;
-			}
-			if(this.getChessByPos(newX, newY)==null) {
-				continue;
-			}
-			else if(this.getChessByPos(newX, newY).player == checkingPiece.player){
-				break;
-			}
-			else if(this.getChessByPos(newX, newY) instanceof Bishop || this.getChessByPos(newX, newY) instanceof Queen) {
-				return this.getChessByPos(newX, newY);
-			}
-			else {
-				break;
-			}
-		}
-		return null;
-	}
-	
-	/**
-	 * helper functions work when only one Knight checker exist
-	 * @param checkingPiece the piece to be checked
-	 * @return the checkers piece that check on the input pieces
-	 */
-	public Pieces knightChecker(Pieces checkingPiece) {
-		int x = checkingPiece.x;
-		int y = checkingPiece.y;
-		//x:2 y:1
-		if( x+2 >= 0 && x+2 < 8 && y+1 >=0 && y+1 < 8) {
-			Pieces tempPiece = this.getChessByPos(x+2, y+1);
-			if(tempPiece!=null) {
-				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					return tempPiece;
-				}
-			}
-		}
-		if( x-2 >= 0 && x-2 < 8 && y+1 >=0 && y+1 < 8) {
-			Pieces tempPiece = this.getChessByPos(x-2, y+1);
-			if(tempPiece!=null) {
-				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					return tempPiece;
-				}
-			}
-		}
-		if( x+2 >= 0 && x+2 < 8 && y-1 >=0 && y-1 < 8) {
-			Pieces tempPiece = this.getChessByPos(x+2, y-1);
-			if(tempPiece!=null) {
-				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					return tempPiece;
-				}
-			}
-		}
-		if( x-2 >= 0 && x-2 < 8 && y-1 >=0 && y-1 < 8) {
-			Pieces tempPiece = this.getChessByPos(x-2, y-1);
-			if(tempPiece!=null) {
-				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					return tempPiece;
-				}
-			}
-		}
-		//x:1 y:2
-		if( x+1 >= 0 && x+1 < 8 && y+2 >=0 && y+2 < 8) {
-			Pieces tempPiece = this.getChessByPos(x+1, y+2);
-			if(tempPiece!=null) {
-				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					return tempPiece;
-				}
-			}
-		}
-		if( x-1 >= 0 && x-1 < 8 && y+2 >=0 && y+2 < 8) {
-			Pieces tempPiece = this.getChessByPos(x-1, y+2);
-			if(tempPiece!=null) {
-				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					return tempPiece;
-				}
-			}
-		}
-		if( x+1 >= 0 && x+1 < 8 && y-2 >=0 && y-2 < 8) {
-			Pieces tempPiece = this.getChessByPos(x+1, y-2);
-			if(tempPiece!=null) {
-				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					return tempPiece;
-				}
-			}
-		}
-		if( x-1 >= 0 && x-1 < 8 && y-2 >=0 && y-2 < 8) {
-			Pieces tempPiece = this.getChessByPos(x-1, y-2);
-			if(tempPiece!=null) {
-				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Knight) {
-					return tempPiece;
-				}
-			}
-		}
-		return null;
-	}	
-	
-	/**
-	 * helper functions work when only one pawn checker exist
-	 * @param checkingPiece the piece to be checked
-	 * @return the checkers piece that check on the input pieces
-	 */
-	public Pieces pawnChecker(Pieces checkingPiece) {
-		int x = checkingPiece.x;
-		int y = checkingPiece.y;
-		if( x+1 >= 0 && x+1 < 8 && y+1 >=0 && y+1 < 8 && checkingPiece.player == 1) {
-			Pieces tempPiece = this.getChessByPos(x+1, y+1);
-			if(tempPiece!=null) {
-				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Pawn) {
-					return tempPiece;
-				}
-			}
-		}
-		if( x-1 >= 0 && x-1 < 8 && y+1 >=0 && y+1 < 8 && checkingPiece.player == 1) {
-			Pieces tempPiece = this.getChessByPos(x-1, y+1);
-			if(tempPiece!=null) {
-				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Pawn) {
-					return tempPiece;
-				}
-			}
-		}
-		if( x+1 >= 0 && x+1 < 8 && y-1 >=0 && y-1 < 8 && checkingPiece.player == 2) {
-			Pieces tempPiece = this.getChessByPos(x+1, y-1);
-			if(tempPiece!=null) {
-				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Pawn) {
-					return tempPiece;
-				}
-			}
-		}
-		if( x-1 >= 0 && x-1 < 8 && y-1 >=0 && y-1 < 8 && checkingPiece.player == 2) {
-			Pieces tempPiece = this.getChessByPos(x-1, y-1);
-			if(tempPiece!=null) {
-				if(tempPiece.player !=checkingPiece.player && tempPiece instanceof Pawn) {
-					return tempPiece;
-				}
-			}
-		}
-		return null;
-	}
-	
-	/**
-	 * if any pieces could stop input rook or queen(horizontal or vertical) piece from x,y to newX newY
-	 * @param x start xCoord
-	 * @param y start yCoord
-	 * @param newX end xCoord
-	 * @param newY end yCoord
-	 * @return true if there is a piece exists otherwise false
-	 */
-	public boolean couldStopRookOrQueen(int x, int y, int newX, int newY) {
-		if(x < newX) {
-			for(int i = x + 1; i < newX; i++) {
-				if(this.isChecked(this.getChessByPos(i, y)))return true;
-			}
-		}
-		else if (x > newX) {
-			for(int i = x - 1; i > newX; i--) {
-				if(this.isChecked(this.getChessByPos(i, y)))return true;
-			}
-		}
-		else if (y < newY) {
-			for(int i = y + 1; i < newY; i++) {
-				if(this.isChecked(this.getChessByPos(x, i)))return true;
-			}
-		}
-		else if (y > newY) {
-			for(int i = y - 1; i > newY; i--) {
-				if(this.isChecked(this.getChessByPos(x, i)))return true;
-			}
+			this.moveChess(king.x, king.y, oldKingX , oldKingY);
 		}
 		return false;
 	}
-	
-	/**
-	 * if any pieces could stop input bishop or queen(diaganol) piece from x,y to newX newY
-	 * @param x start xCoord
-	 * @param y start yCoord
-	 * @param newX end xCoord
-	 * @param newY end yCoord
-	 * @return true if there is a piece exists otherwise false
-	 */
-	public boolean couldStopBishopOrQueen(int x, int y, int newX, int newY) {
-		if(x < newX && y < newY) {
-			for (int i = 1; i < Math.abs(x - newX); i++) {
-				this.moveChess(x, y, x+i, y+i);
-				if(this.isChecked(this.getChessByPos(x + i, y + i))) {
-					this.moveChess(x+i, y+i, x, y);
-					return true;
-				}
-				this.moveChess(x+i, y+i, x, y);
-					
-			}
-		}
-		else if(x > newX && y < newY) {
-			for (int i = 1; i < Math.abs(x - newX); i++) {
-				this.moveChess(x, y, x-i, y+i);
-				if(this.isChecked(this.getChessByPos(x - i, y + i))) {
-					this.moveChess(x-i, y+i, x, y);
-					return true;
-				}
-				this.moveChess(x-i, y+i, x, y);
-			}
-		}
-		else if(x < newX && y > newY) {
-			for (int i = 1; i < Math.abs(x - newX); i++) {
-				this.moveChess(x, y, x+i, y-i);
-				if(this.isChecked(this.getChessByPos(x + i, y - i))) {
-					this.moveChess(x+i, y-i, x, y);
-					return true;
-				}
-				this.moveChess(x+i, y-i, x, y);
-			}
-		}
-		else if(x > newX && y > newY) {
-			for (int i = 1; i < Math.abs(x - newX); i++) {
-				this.moveChess(x, y, x-i, y-i);
-				if(this.isChecked(this.getChessByPos(x - i, y - i))) {
-					this.moveChess(x-i, y-i, x, y);
-					return true;
-				}
-				this.moveChess(x-i, y-i, x, y);
-			}
-		}
-		return false;
-	}
-	
-	//
-	//Checkmate main function:
-	//it will see if the king is checked
-	//if it is checked then try to move the king around to escape from being captured
-	//if we cannot avoid being checked by moving the king around
-	//then check how many checkers there are check on the king
-	//if there are two or more than there is no way to stop it in one action
-	//if there are only one chess check on the king, 
-	//then try to figure out if there is a way to capture the chess
-	//block it from getting to the king
-	//
+
 	/**
 	 * Checkmate main function:
 	 * it will see if the king is checked
@@ -1052,116 +554,39 @@ public class Board {
 		Pieces king = this.getKing(player);
 		int oldKingX = king.x;
 		int oldKingY = king.y;
-		//get num of checker seperately
-		int numRookOrQueen = this.isCheckedByRookOrQueen(king);
-		int numBishopOrQueen = this.isCheckedByBishopOrQueen(king);
-		int numKnight = this.isCheckedByKnight(king);
-		int numPawn = this.isCheckedByPawn(king);
-		//get num of checker
-		int numChecked = numRookOrQueen + numBishopOrQueen + numKnight + numPawn;
-		if(numChecked == 0) return false;//since no one check on the king
-		
-		//if one or more checker, check if move the king will solve the problem
-		if(this.moveChess(king.x, king.y, oldKingX - 1 , oldKingY - 1)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
+		if(this.isChecked(king) <=0 ){
+			return false;
 		}
-		if(this.moveChess(king.x, king.y, oldKingX + 1 , oldKingY + 1)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
-		}
-		if(this.moveChess(king.x, king.y, oldKingX - 1 , oldKingY + 1)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
-		}
-		if(this.moveChess(king.x, king.y, oldKingX + 1 , oldKingY - 1)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
-		}
-		if(this.moveChess(king.x, king.y, oldKingX , oldKingY - 1)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
-		}
-		if(this.moveChess(king.x, king.y, oldKingX , oldKingY + 1)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
-		}
-		if(this.moveChess(king.x, king.y, oldKingX - 1, oldKingY)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				return false;
-			}
-		}
-		if(this.moveChess(king.x, king.y, oldKingX + 1, oldKingY)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
+		//Check if move the king will solve the problem
+		if(this.moveKingCanSolve(king, oldKingX - 1,oldKingY - 1)||
+			this.moveKingCanSolve(king, oldKingX + 1,oldKingY + 1)||
+			this.moveKingCanSolve(king, oldKingX - 1,oldKingY + 1)||
+			this.moveKingCanSolve(king, oldKingX + 1,oldKingY - 1)||
+			this.moveKingCanSolve(king, oldKingX ,oldKingY - 1)||
+			this.moveKingCanSolve(king, oldKingX ,oldKingY + 1)||
+			this.moveKingCanSolve(king, oldKingX - 1,oldKingY)||
+			this.moveKingCanSolve(king, oldKingX + 1,oldKingY )){
+			return false;
 		}
 		this.moveChess(king.x, king.y, oldKingX , oldKingY);
-		//if king cannot be moved and more than checkers available return true
-		if(numChecked > 1) {
+		//if king cannot be moved and more than checkers available then it must be checkMate
+		if(this.isChecked(king) > 1) {
 			return true;
 		}//if king cannot be moved and only one checker available
 		else {//we can try to either capture it or block it
-			if(numRookOrQueen == 1) {//the checker is Rook or Queen
-				Pieces checker = this.rookOrQueenChecker(king);
-				//check if the checker could be captured
-				if(this.isChecked(checker)) {
-					return false;
-				}
-				//check if the checker could be blocked
-				if(this.couldStopRookOrQueen(checker.x, checker.y, king.x, king.y)) {
-					return false;
-				}
+			ArrayList<Pieces> theChecker = new ArrayList<Pieces>();
+			theChecker.addAll(this.isCheckedByRookOrQueen(king));
+			theChecker.addAll(this.isCheckedByBishopOrQueen(king));
+			theChecker.addAll(this.isCheckedByKnight(king));
+			theChecker.addAll(this.isCheckedByPawn(king));
+			theChecker.addAll(this.isCheckedByCrab(king));
+			theChecker.addAll(this.isCheckedByOx(king));
+			Pieces checker = theChecker.get(0);
+			if(this.isChecked(checker)>0) {
+				return false;
 			}
-			else if (numBishopOrQueen == 1) {//the checker is bishop or queen
-				//check if the checker could be captured
-				Pieces checker = this.bishopOrQueenChecker(king);
-				if(this.isChecked(checker)) {
-					return false;
-				}
-				//check if the checker could be blocked
-				if(this.couldStopBishopOrQueen(checker.x, checker.y, king.x, king.y)) {
-					return false;
-				}
-			}
-			else if (numKnight == 1) {//the checker is knight
-				//check if the checker could be captured
-				if(this.isChecked(this.knightChecker(king))) {
-					return false;
-				}
-				//check if the checker could be blocked
-				//knight cannot be blocked
-				return true;
-			}
-			else if (numPawn == 1) {//the checker is pawn
-				//check if the checker could be captured
-				if(this.isChecked(this.pawnChecker(king))) {
-					return false;
-				}
-				//check if the checker could be blocked
-				//pawn cannot be blocked
-				return true;
+			if(checker.couldBeStopped(king.x, king.y, this)){
+				return false;
 			}
 		}
 		return true;
@@ -1170,98 +595,30 @@ public class Board {
 	//
 	//stalemate
 	//
-	
-	/**
-	 * helper functions check movability of rook or queen(horizontal or vertical)
-	 * @param currPiece the input piece that need to be check if it can move
-	 * @return true if the input can move otherwise false
-	 */
-	public boolean movableRookOrQueen(Pieces currPiece) {
-		int currX = currPiece.x;
-		int currY = currPiece.y;
-		//only need to check the closest point
-		if(this.validMoveRook(currX, currY, currX + 1, currY)||
-			this.validMoveRook(currX, currY, currX - 1, currY)||
-			this.validMoveRook(currX, currY, currX, currY + 1)||
-			this.validMoveRook(currX, currY, currX, currY - 1)) {
-			return true;
-		}
-		return false;
-	}
-	
-	/**
-	 * helper functions check movability of bishop or queen(diaganol)
-	 * @param currPiece the input piece that need to be check if it can move
-	 * @return true if the input can move otherwise false
-	 */
-	public boolean movableBishopOrQueen(Pieces currPiece) {
-		int currX = currPiece.x;
-		int currY = currPiece.y;
-		if(this.validMoveBishop(currX, currY, currX + 1, currY + 1)||
-			this.validMoveBishop(currX, currY, currX - 1, currY + 1)||
-			this.validMoveBishop(currX, currY, currX + 1, currY - 1)||
-			this.validMoveBishop(currX, currY, currX - 1, currY - 1)) {
-			return true;
-		}
-//		if(this.validMoveBishop(currX, currY, currX - 1, currY + 1)) {
-//			return true;
-//		}
-//		if(this.validMoveBishop(currX, currY, currX + 1, currY - 1)) {
-//			return true;
-//		}
-//		if(this.validMoveBishop(currX, currY, currX - 1, currY - 1)) {
-//			return true;
-//		}
-		return false;
-	}
 
 	/**
-	 * helper functions check movability of knight
-	 * @param currPiece the input piece that need to be check if it can move
-	 * @return true if the input can move otherwise false
+	 * helper function for stalemate to see if the king can move around
+	 * @param king the king need to be checked on
+	 * @param newKingX if the king can move to newKingX
+	 * @param newKingY if the king can move to newKingY
+	 * @return true if the king can move in that direction otherwise false
 	 */
-	public boolean movableKnight(Pieces currPiece) {
-		int currX = currPiece.x;
-		int currY = currPiece.y;
-		if(this.validMoveKnight(currX, currY, currX + 1, currY + 2)||
-			this.validMoveKnight(currX, currY, currX - 1, currY + 2)||
-			this.validMoveKnight(currX, currY, currX + 1, currY - 2)||
-			this.validMoveKnight(currX, currY, currX - 1, currY - 2)||
-			this.validMoveKnight(currX, currY, currX + 2, currY + 1)||
-			this.validMoveKnight(currX, currY, currX - 2, currY + 1)||
-			this.validMoveKnight(currX, currY, currX + 2, currY - 1)||
-			this.validMoveKnight(currX, currY, currX - 2, currY - 1)) {
-			return true;
-		}
-		return false;
-	}
-	
-	/**
-	 * helper functions check movability of pawn
-	 * @param currPiece the input piece that need to be check if it can move
-	 * @return true if the input can move otherwise false
-	 */
-	public boolean movablePawn(Pieces currPiece) {
-		int currX = currPiece.x;
-		int currY = currPiece.y;
-		if(currPiece.player == 1) {
-			if(this.validMovePawn(currX, currY, currX + 1, currY + 1)||
-				this.validMovePawn(currX, currY, currX, currY + 1)||
-				this.validMovePawn(currX, currY, currX - 1, currY + 1)) {
+	public boolean moveKingNotChecked(Pieces king, int newKingX, int newKingY){
+		int oldKingX = king.x;
+		int oldKingY = king.y;
+		Pieces temp = this.getChessByPos(newKingX , newKingY);
+		if(this.moveChess(oldKingX, oldKingY, newKingX , newKingY)) {
+			if(this.isChecked(king)<=0) {
+				this.moveChess(newKingX, newKingY, oldKingX , oldKingY);
+				board[newKingX][newKingY] = temp;
 				return true;
 			}
-		}
-		else if(currPiece.player == 2){
-			if(this.validMovePawn(currX, currY, currX + 1, currY - 1)||
-				this.validMovePawn(currX, currY, currX, currY - 1)||
-				this.validMovePawn(currX, currY, currX - 1, currY - 1)) {
-				return true;
-			}
+			this.moveChess(newKingX, newKingY, oldKingX , oldKingY);
+			board[newKingX][newKingY] = temp;
 		}
 		return false;
 	}
 
-	
 	/**
 	 * stalemate main function:
 	 * first check the king is not checked, if it is checked then it must be not stalement
@@ -1275,93 +632,18 @@ public class Board {
 		Pieces king = this.getKing(player);
 		int oldKingX = king.x;
 		int oldKingY = king.y;
-		int numRookOrQueen = this.isCheckedByRookOrQueen(king);
-		int numBishopOrQueen = this.isCheckedByBishopOrQueen(king);
-		int numKnight = this.isCheckedByKnight(king);
-		int numPawn = this.isCheckedByPawn(king);
-		int numChecked = numRookOrQueen + numBishopOrQueen + numKnight + numPawn;
+		int numChecked = this.isChecked(king);
 		if(numChecked > 0) return false;//if the king is checked then it cannot be stalemate
 		//if the king can move and not be checked, it is not stalemate
-		Pieces temp = this.getChessByPos(oldKingX - 1 , oldKingY - 1);
-		if(this.moveChess(king.x, king.y, oldKingX - 1 , oldKingY - 1)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				board[oldKingX - 1][oldKingY - 1] = temp;
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
-			board[oldKingX - 1][oldKingY - 1] = temp;
-		}
-		temp = this.getChessByPos(oldKingX + 1 , oldKingY + 1);
-		if(this.moveChess(king.x, king.y, oldKingX + 1 , oldKingY + 1)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				board[oldKingX + 1][oldKingY + 1] = temp;
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
-			board[oldKingX + 1][oldKingY + 1] = temp;
-		}
-		
-		temp = this.getChessByPos( oldKingX - 1 , oldKingY + 1);
-		if(this.moveChess(king.x, king.y, oldKingX - 1 , oldKingY + 1)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				board[oldKingX - 1][oldKingY + 1] = temp;
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
-			board[oldKingX - 1][oldKingY + 1] = temp;
-		}
-		temp = this.getChessByPos(oldKingX + 1 , oldKingY - 1);
-		if(this.moveChess(king.x, king.y, oldKingX + 1 , oldKingY - 1)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				board[oldKingX + 1][oldKingY - 1] = temp;
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
-			board[oldKingX + 1][oldKingY - 1] = temp;
-		}
-		temp = this.getChessByPos(oldKingX , oldKingY - 1);
-		if(this.moveChess(king.x, king.y, oldKingX , oldKingY - 1)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				board[oldKingX][oldKingY - 1] = temp;
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
-			board[oldKingX][oldKingY - 1] = temp;
-		}
-		temp = this.getChessByPos(oldKingX , oldKingY + 1);
-		if(this.moveChess(king.x, king.y, oldKingX , oldKingY + 1)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				board[oldKingX][oldKingY + 1] = temp;
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
-			board[oldKingX][oldKingY + 1] = temp;
-		}
-		temp = this.getChessByPos(oldKingX - 1, oldKingY);
-		if(this.moveChess(king.x, king.y, oldKingX - 1, oldKingY)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				board[oldKingX - 1][oldKingY] = temp;
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
-			board[oldKingX - 1][oldKingY] = temp;
-		}
-		temp = this.getChessByPos(oldKingX - 1, oldKingY);
-		if(this.moveChess(king.x, king.y, oldKingX + 1, oldKingY)) {
-			if(!this.isChecked(king)) {
-				this.moveChess(king.x, king.y, oldKingX , oldKingY);
-				board[oldKingX + 1][oldKingY] = temp;
-				return false;
-			}
-			this.moveChess(king.x, king.y, oldKingX , oldKingY);
-			board[oldKingX + 1][oldKingY] = temp;
+		if (this.moveKingNotChecked(king,oldKingX - 1, oldKingY - 1 )||
+				this.moveKingNotChecked(king,oldKingX + 1, oldKingY + 1 )||
+				this.moveKingNotChecked(king,oldKingX - 1, oldKingY + 1 )||
+				this.moveKingNotChecked(king,oldKingX + 1, oldKingY - 1 )||
+				this.moveKingNotChecked(king,oldKingX, oldKingY - 1 )||
+				this.moveKingNotChecked(king,oldKingX, oldKingY + 1 )||
+				this.moveKingNotChecked(king,oldKingX - 1, oldKingY)||
+				this.moveKingNotChecked(king,oldKingX + 1, oldKingY)){
+			return false;
 		}
 		//if the king cannot move check all other chesspieces
 		for (int i = 0; i < 8; i++) {
@@ -1369,17 +651,11 @@ public class Board {
 				Pieces currPiece = this.getChessByPos(i, j);
 				if(currPiece == null) continue;
 				if(currPiece.player == player) {
-					if(currPiece.type == "Rook" || currPiece.type == "Queen") {
-						if (this.movableRookOrQueen(currPiece))return false;
+					if(currPiece instanceof King){
+						continue;//skip the king because it is checked already and it need to be move without being chekced
 					}
-					else if(currPiece.type == "Bishop" || currPiece.type == "Queen"){
-						if(this.movableBishopOrQueen(currPiece))return false;
-					}
-					else if(currPiece.type == "Knight") {
-						if(this.movableKnight(currPiece))return false;
-					}
-					else if (currPiece.type == "Pawn") {
-						if(this.movablePawn(currPiece))return false;
+					if (currPiece.isMovable(this)){
+						return false;
 					}
 				}
 			}
