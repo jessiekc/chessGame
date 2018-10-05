@@ -11,6 +11,7 @@ public class CrabTests {
     @Test
     public void shouldMoveCrab(){
         Board board = new Board();
+
         board.removePieces(1,7);
         board.board[1][7]  = new Crab(1,7, 2);
         assertFalse("Crab moved on another pawn with same color", board.moveChess(1, 7, 0, 7));
@@ -24,6 +25,7 @@ public class CrabTests {
     @Test
     public void isMovableCrab(){
         Board board = new Board();
+
         board.removePieces(1,7);
         board.board[1][7]  = new Crab(1,7, 2);
         assertFalse("Ox is not movable", board.getChessByPos(1,7).isMovable(board));
@@ -35,6 +37,7 @@ public class CrabTests {
     @Test
     public void couldBeStoppedOx(){
         Board board = new Board();
+
         board.removePieces(1,6);
         board.board[1][6]  = new Crab(1,6, 2);
         board.board[3][3]  = new Rook(3, 3, 1);

@@ -14,6 +14,7 @@ public class OxTests {
     @Test
     public void moveChessOx(){
         Board board = new Board();
+
         board.removePieces(1,7);
         board.board[1][7]  = new Ox(1,7, 2);
         assertFalse("Ox moved on another pawn with same color", board.moveChess(1, 7, 1, 6));
@@ -28,6 +29,7 @@ public class OxTests {
     @Test
     public void isMovableOx(){
         Board board = new Board();
+
         board.removePieces(1,7);
         board.board[1][7]  = new Ox(1,7, 2);
         assertFalse("Ox is not movable", board.getChessByPos(1,7).isMovable(board));
@@ -41,6 +43,7 @@ public class OxTests {
     @Test
     public void couldBeStoppedOx(){
         Board board = new Board();
+
         board.removePieces(1,6);
         board.board[1][6]  = new Ox(1,6, 2);
         board.board[0][3]  = new Rook(0, 3, 1);

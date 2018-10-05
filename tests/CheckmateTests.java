@@ -16,6 +16,10 @@ public class CheckmateTests {
 	@Test
 	public void isCheckedByHelperTest(){
 		Board board = new Board();
+		board.removePieces(1,3);
+		board.removePieces(5,3);
+		board.removePieces(6,4);
+		board.removePieces(2,4);
 		//remove everything except the king
 		for (int i = 0; i < 8; i++) {
 			board.removePieces(i, 6);
@@ -50,6 +54,10 @@ public class CheckmateTests {
 	@Test
 	public void couldStopBishopOrQueenHelperTest(){
 		Board board = new Board();
+		board.removePieces(1,3);
+		board.removePieces(5,3);
+		board.removePieces(6,4);
+		board.removePieces(2,4);
 		//remove everything except the king
 		for (int i = 0; i < 8; i++) {
 			board.removePieces(i, 6);
@@ -88,6 +96,10 @@ public class CheckmateTests {
 	public void couldStopRookOrQueenHelperTest(){
 
 		Board board = new Board();
+		board.removePieces(1,3);
+		board.removePieces(5,3);
+		board.removePieces(6,4);
+		board.removePieces(2,4);
 		//remove everything except the king
 		for (int i = 0; i < 8; i++) {
 			board.removePieces(i, 6);
@@ -113,6 +125,10 @@ public class CheckmateTests {
 	@Test
 	public void rookOrQueenCheckerHelperTest() {
 		Board board = new Board();
+		board.removePieces(1,3);
+		board.removePieces(5,3);
+		board.removePieces(6,4);
+		board.removePieces(2,4);
 		//remove everything except the king
 		for (int i = 0; i < 8; i++) {
 			board.removePieces(i, 6);
@@ -140,6 +156,10 @@ public class CheckmateTests {
 	@Test
 	public void knightCheckerHelperTest() {
 		Board board = new Board();
+		board.removePieces(1,3);
+		board.removePieces(5,3);
+		board.removePieces(6,4);
+		board.removePieces(2,4);
 		//remove everything except the king
 		for (int i = 0; i < 8; i++) {
 			board.removePieces(i, 6);
@@ -180,6 +200,10 @@ public class CheckmateTests {
 	@Test
 	public void pawnCheckerHelperTest() {
 		Board board = new Board();
+		board.removePieces(1,3);
+		board.removePieces(5,3);
+		board.removePieces(6,4);
+		board.removePieces(2,4);
 		//remove everything except the king
 		for (int i = 0; i < 8; i++) {
 			board.removePieces(i, 6);

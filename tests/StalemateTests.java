@@ -15,6 +15,7 @@ public class StalemateTests {
 	@Test
 	public void movableBishopOrQueenTests(){
 		Board board = new Board();
+
 		//remove everything except the king
 		for (int i = 0; i < 8; i++) {
 			board.removePieces(i, 6);
@@ -38,6 +39,7 @@ public class StalemateTests {
 	@Test
 	public void movableRookOrQueenTests(){
 		Board board = new Board();
+
 		//remove everything except the king
 		for (int i = 0; i < 8; i++) {
 			board.removePieces(i, 6);
@@ -62,6 +64,7 @@ public class StalemateTests {
 	@Test
 	public void movableKinghtTests(){
 		Board board = new Board();
+
 		//remove everything except the king
 		for (int i = 0; i < 8; i++) {
 			board.removePieces(i, 6);
@@ -85,6 +88,7 @@ public class StalemateTests {
 	@Test
 	public void movablePawnTests(){
 		Board board = new Board();
+
 		//remove everything except the king
 		for (int i = 0; i < 8; i++) {
 			board.removePieces(i, 6);
@@ -111,6 +115,7 @@ public class StalemateTests {
 	@Test
 	public void basicStalemateTest(){
 		Board board = new Board();
+
 		//remove everything except the king
 		for (int i = 0; i < 8; i++) {
 			board.removePieces(i, 6);
@@ -137,6 +142,7 @@ public class StalemateTests {
 	@Test
 	public void wikiStalemateTest(){
 		Board board = new Board();
+
 		//remove everything except the king
 		for (int i = 0; i < 8; i++) {
 			board.removePieces(i, 6);

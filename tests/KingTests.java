@@ -19,6 +19,7 @@ public class KingTests {
 	@Test
 	public void shouldMoveKing(){
 		Board board = new Board();
+
 		//invalid input for moving out of grid
 		assertFalse("King moved out of grid", board.moveChess(4, 7, 4, 8));
 		//invalid input for moving 2 grid
@@ -35,6 +36,7 @@ public class KingTests {
 	@Test
 	public void isMovableKing(){
 		Board board = new Board();
+
 		board.getChessByPos(4,7).isMovable(board);
 		board.getChessByPos(4,7).couldBeStopped(4,6,board);
 		board.moveChess(4, 7, 4, 8);

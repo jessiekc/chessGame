@@ -17,6 +17,7 @@ public class PawnTests {
 	@Test
 	public void shouldMovePawn(){
 		Board board = new Board();
+
 		assertFalse("Pawn go diagnal without capture chess", board.moveChess(1, 6, 0, 5));
 		assertTrue("Pawn go two on first step", board.moveChess(1, 6, 1, 4));
 		assertFalse("Pawn agains convention", board.moveChess(1, 1, 2, 4));
