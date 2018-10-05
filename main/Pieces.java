@@ -5,8 +5,8 @@ package main;
  *
  */
 public abstract class Pieces {
-	int x = -1;
-	int y = -1;
+	public int x = -1;
+	public int y = -1;
 	String id = "";
 	public int player = -1;
 	public String type = "";

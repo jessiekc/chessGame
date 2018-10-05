@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Stack;
 /**
  * 
  * @author kaichenle
@@ -8,10 +9,88 @@ import java.util.ArrayList;
  */
 public class Board {
 	public Pieces[][] board = new Pieces[8][8];
+	public boolean notGameEnd;
+	public int winner;
+	//turns = 1 player 1 turns
+	//turns = 0 player 2 turns
+	private boolean turns;
+	public boolean getTurns () {
+		return turns;
+	}
+	/**
+	 * switch player turns
+	 */
+	public void switchTurns() {
+		this.turns = !this.turns;
+	}
+	//stacks to track moving history
+	private Stack<Integer> historyMoveX1;
+	private Stack<Integer> historyMoveY1;
+	private Stack<Integer> historyMoveX2;
+	private Stack<Integer> historyMoveY2;
+	/**
+	 * check if it valid to undo
+	 * @return true if it is valid otherwise false
+	 */
+	public boolean undoValid(){
+		if(historyMoveX1.size()<2||historyMoveX2.size()<2){
+			return false;
+		}
+		return true;
+	}
+	/**
+	 * undo operation on the board
+	 * users can undo when ever there are available undo step
+	 * but undo would applies to both users
+	 */
+	public void undo () {
+		if (!this.undoValid()){
+			System.out.println ("Undo invalid");
+			return;
+		}
+		int currX1 = historyMoveX1.pop();
+		int currY1 = historyMoveY1.pop();
+		int undoX1 = historyMoveX1.pop();
+		int undoY1  = historyMoveY1.pop();
+		int currX2 = historyMoveX2.pop();
+		int currY2 = historyMoveY2.pop();
+		int undoX2 = historyMoveX2.pop();
+		int undoY2  = historyMoveY2.pop();
+
+
+		if (board[currX1][currY1] instanceof Pawn) {
+			if (undoY1 == 1) {
+				((Pawn) board[currX1][currY1]).firstMove=true;
+			}
+		}
+		if (board[currX2][currY2] instanceof Pawn) {
+			if (undoY2 == 6) {
+				((Pawn) board[currX2][currY2]).firstMove=true;
+			}
+		}
+		board[undoX1][undoY1] = board[currX1][currY1];
+		board[currX1][currY1]=null;
+		board[undoX1][undoY1].x = undoX1;
+		board[undoX1][undoY1].y = undoY1;
+
+		board[undoX2][undoY2] = board[currX2][currY2];
+		board[currX2][currY2]=null;
+		board[undoX2][undoY2].x = undoX2;
+		board[undoX2][undoY2].y = undoY2;
+	}
+
+
+
 	/*
 	 * a constructor that will create a standard 8*8 chess board with chesses on it
 	 */
 	public Board() {
+		historyMoveX1 = new Stack<Integer> ();
+		historyMoveX2 = new Stack<Integer> ();
+		historyMoveY1 = new Stack<Integer> ();
+		historyMoveY2 = new Stack<Integer> ();
+		winner= -1;
+		turns = true;
 		for (int i = 0; i < 8; i++) {
 			for(int j = 0; j < 8; j++) {
 				board[i][j]=null;
@@ -25,21 +104,103 @@ public class Board {
 		board[7][0] = new Rook(7, 0, 1);
 		board[0][7] = new Rook(0, 7, 2);
 		board[7][7] = new Rook(7, 7, 2);
-		
+
 		board[1][0] = new Knight(1, 0, 1);
 		board[6][0] = new Knight(6, 0, 1);
 		board[1][7] = new Knight(1, 7, 2);
 		board[6][7] = new Knight(6, 7, 2);
-		
+
 		board[2][0] = new Bishop(2, 0, 1);
 		board[5][0] = new Bishop(5, 0,  1);
 		board[2][7] = new Bishop(2, 7, 2);
 		board[5][7] = new Bishop(5, 7, 2);
-		
+
 		board[3][0] = new Queen(3, 0, 1);
 		board[3][7] = new Queen(3, 7, 2);
 		board[4][0] = new King(4, 0, 1);
 		board[4][7] = new King(4, 7, 2);
+
+//		historyMoveX1 = new Stack<Integer> ();
+//		historyMoveX2 = new Stack<Integer> ();
+//		historyMoveY1 = new Stack<Integer> ();
+//		historyMoveY2 = new Stack<Integer> ();
+//		winner= -1;
+//		turns = true;
+//		for (int i = 0; i < 8; i++) {
+//			for(int j = 0; j < 8; j++) {
+//				board[i][j]=null;
+//			}
+//		}
+//		for (int i = 0; i < 8; i++) {
+//			//board[i][1] = new Pawn(i, 1, 1);
+//			//board[i][6] = new Pawn(i, 6, 2);
+//		}
+//		board[0][0] = new Rook(0, 0, 1);
+//		board[7][0] = new Rook(7, 0, 1);
+//		//board[0][7] = new Rook(0, 7, 2);
+//		//board[7][7] = new Rook(7, 7, 2);
+//
+//		board[1][0] = new Knight(1, 0, 1);
+//		board[6][0] = new Knight(6, 0, 1);
+//		//board[1][7] = new Knight(1, 7, 2);
+//		//board[6][7] = new Knight(6, 7, 2);
+//
+//		board[2][0] = new Bishop(2, 0, 1);
+//		board[5][0] = new Bishop(5, 0,  1);
+//		//board[2][7] = new Bishop(2, 7, 2);
+//		//board[5][7] = new Bishop(5, 7, 2);
+//
+//		board[3][0] = new Queen(3, 0, 1);
+//		//board[3][7] = new Queen(3, 7, 2);
+//		board[4][0] = new King(4, 0, 1);
+//		board[4][7] = new King(4, 7, 2);
+	}
+
+	/**
+	 *  constructor for customize  board
+	 * @param custom
+	 */
+	public Board(boolean custom) {
+		if(custom == false) return;
+		historyMoveX1 = new Stack<Integer> ();
+		historyMoveX2 = new Stack<Integer> ();
+		historyMoveY1 = new Stack<Integer> ();
+		historyMoveY2 = new Stack<Integer> ();
+		winner= -1;
+		turns = true;
+		for (int i = 0; i < 8; i++) {
+			for(int j = 0; j < 8; j++) {
+				board[i][j]=null;
+			}
+		}
+		for (int i = 0; i < 8; i++) {
+			board[i][1] = new Pawn(i, 1, 1);
+			board[i][6] = new Pawn(i, 6, 2);
+		}
+		board[0][0] = new Rook(0, 0, 1);
+		board[7][0] = new Rook(7, 0, 1);
+		board[0][7] = new Rook(0, 7, 2);
+		board[7][7] = new Rook(7, 7, 2);
+
+		board[1][0] = new Knight(1, 0, 1);
+		board[6][0] = new Knight(6, 0, 1);
+		board[1][7] = new Knight(1, 7, 2);
+		board[6][7] = new Knight(6, 7, 2);
+
+		board[2][0] = new Bishop(2, 0, 1);
+		board[5][0] = new Bishop(5, 0,  1);
+		board[2][7] = new Bishop(2, 7, 2);
+		board[5][7] = new Bishop(5, 7, 2);
+
+		board[3][0] = new Queen(3, 0, 1);
+		board[3][7] = new Queen(3, 7, 2);
+		board[4][0] = new King(4, 0, 1);
+		board[4][7] = new King(4, 7, 2);
+		board[1][3] = new Crab (1, 3 ,1);
+		board[5][3] = new Ox (5, 3 ,1);
+		board[6][4] = new Crab (6, 4,2);
+		board[2][4] = new Ox(2, 4,2);
+
 	}
 	
 	/**
@@ -104,6 +265,23 @@ public class Board {
 		}
 		if(this.getChessByPos(x, y).type == "Pawn"){
 			((Pawn)this.getChessByPos(x, y)).firstMove = false;
+		}
+		if(this.getChessByPos(x, y).player==1){
+			Pieces start1 = board[x][y];
+			Pieces end1 = board[newX][newY];
+			historyMoveX1.push(x);
+			historyMoveY1.push(y);
+			historyMoveX1.push(newX);
+			historyMoveY1.push(newY);
+
+		}
+		else{
+			Pieces start2 = board[x][y];
+			Pieces end2 = board[newX][newY];
+			historyMoveX2.push(x);
+			historyMoveY2.push(y);
+			historyMoveX2.push(newX);
+			historyMoveY2.push(newY);
 		}
 		board[newX][newY]=board[x][y];
 		board[newX][newY].x=newX;
@@ -571,6 +749,11 @@ public class Board {
 		this.moveChess(king.x, king.y, oldKingX , oldKingY);
 		//if king cannot be moved and more than checkers available then it must be checkMate
 		if(this.isChecked(king) > 1) {
+			if (player == 1 ){
+				winner = 2;
+			}
+			else winner = 1;
+			notGameEnd = false;
 			return true;
 		}//if king cannot be moved and only one checker available
 		else {//we can try to either capture it or block it
@@ -589,6 +772,11 @@ public class Board {
 				return false;
 			}
 		}
+		if (player == 1 ){
+			winner = 2;
+		}
+		else winner = 1;
+
 		return true;
 	}
 	
@@ -660,6 +848,7 @@ public class Board {
 				}
 			}
 		}
+		this.winner = 0 ;
 		return true;
 	}
 	
