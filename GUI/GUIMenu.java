@@ -20,6 +20,9 @@ public class GUIMenu extends JPanel{
         add ( white);
 
         //menu bar
+        JMenuBar menubar = new JMenuBar();
+        JMenu game = new JMenu ("Menu");
+
         JMenuItem customGame = new JMenuItem ("Custom Game");
         customGame.addActionListener (new ActionListener () {
             @Override
@@ -31,11 +34,13 @@ public class GUIMenu extends JPanel{
                 main.controller = new Controller(main, true);
                 main.controller.whiteName=whiteName;
                 main.controller.blackName=blackName;
-                main.controller.score1= score1;
-                main.controller.score2= score2;
+                main.controller.score1= score1  + 1;
+                main.controller.score2= score2  + 1;
+                setScore(whiteName, blackName, score1, score2);
                 main.controller.restartGame ();
             }
         });
+
         JMenuItem standardGame = new JMenuItem ("Standard Game");
         standardGame.addActionListener (new ActionListener () {
             @Override
@@ -47,13 +52,13 @@ public class GUIMenu extends JPanel{
                 main.controller = new Controller (main, false);
                 main.controller.whiteName=whiteName;
                 main.controller.blackName=blackName;
-                main.controller.score1= score1;
-                main.controller.score2= score2;
+                main.controller.score1= score1 + 1;
+                main.controller.score2= score2 + 1;
+                setScore(whiteName, blackName, score1, score2);
                 main.controller.restartGame ();
             }
         });
-        JMenuBar menubar = new JMenuBar();
-        JMenu game = new JMenu ("Game");
+
         JMenuItem forfeit = new JMenuItem ("Forfeit");
         forfeit.addActionListener (new ActionListener() {
             @Override
