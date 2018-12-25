@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bc869dd4-8713-44e8-8b38-84cab732ed82" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/GUI/GUIBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GUIBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/Board.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/fa18_cs242_assignment1$tests_in_fa18_cs242_assignment1.ic" NAME="tests in fa18-cs242-assignment1 Coverage Results" MODIFIED="1538773043055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>tests.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/fa18_cs242_assignment1$All_in_fa18_cs242_assignment1.ic" NAME="All in fa18-cs242-assignment1 Coverage Results" MODIFIED="1538777788517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/fa18_cs242_assignment1$KingTests.ic" NAME="KingTests Coverage Results" MODIFIED="1538085732161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>tests.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/fa18_cs242_assignment1$OxTests.ic" NAME="OxTests Coverage Results" MODIFIED="1538077991302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>tests.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/fa18_cs242_assignment1$CheckmateTests.ic" NAME="CheckmateTests Coverage Results" MODIFIED="1537972536609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>tests.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="410" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="929918629">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gitignore" value="1" />
+          <entry key="java" value="91" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="91" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="9" />
+          <entry key="java" value="12912" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="12912" />
+          <entry key="PLAIN_TEXT" value="9" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="477">
+              <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/Board.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="66" column="30" lean-forward="true" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#getChessByPos#0;class#Board#0" />
+                <element signature="method#getChessByPos#0;class#Board#0" />
+                <element signature="docComment;method#samePlayer#0;class#Board#0" />
+                <element signature="method#samePlayer#0;class#Board#0" />
+                <element signature="docComment;method#removePieces#0;class#Board#0" />
+                <element signature="docComment;method#moveChess#0;class#Board#0" />
+                <element signature="method#moveChess#0;class#Board#0" />
+                <element signature="docComment;method#getKing#0;class#Board#0" />
+                <element signature="method#getKing#0;class#Board#0" />
+                <element signature="docComment;method#isCheckedByCrab#0;class#Board#0" />
+                <element signature="method#isCheckedByCrab#0;class#Board#0" />
+                <element signature="docComment;method#isCheckedByOx#0;class#Board#0" />
+                <element signature="method#isCheckedByOx#0;class#Board#0" />
+                <element signature="docComment;method#isCheckedByRookOrQueen#0;class#Board#0" />
+                <element signature="method#isCheckedByRookOrQueen#0;class#Board#0" />
+                <element signature="docComment;method#isCheckedByBishopOrQueen#0;class#Board#0" />
+                <element signature="method#isCheckedByBishopOrQueen#0;class#Board#0" />
+                <element signature="docComment;method#isCheckedByKnight#0;class#Board#0" />
+                <element signature="method#isCheckedByKnight#0;class#Board#0" />
+                <element signature="docComment;method#isCheckedByPawn#0;class#Board#0" />
+                <element signature="method#isCheckedByPawn#0;class#Board#0" />
+                <element signature="docComment;method#isChecked#0;class#Board#0" />
+                <element signature="method#isChecked#0;class#Board#0" />
+                <element signature="docComment;method#moveKingCanSolve#0;class#Board#0" />
+                <element signature="method#moveKingCanSolve#0;class#Board#0" />
+                <element signature="docComment;method#isCheckmate#0;class#Board#0" />
+                <element signature="docComment;method#moveKingNotChecked#0;class#Board#0" />
+                <element signature="method#moveKingNotChecked#0;class#Board#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/GUIBoard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-51">
+              <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GUI/GUIMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>winner</find>
+      <find>notGameEnd</find>
+      <find>isNotGameEnd</find>
+      <find>setScore</find>
+      <find>forfeit</find>
+      <find>menu</find>
+      <find>new B</find>
+      <find>resizable</find>
+      <find>j</find>
+      <find>guiplayer</find>
+      <find>moveicon</find>
+      <find>player</find>
+      <find>guiMenu</find>
+      <find>system</find>
+      <find>whiteScore</find>
+      <find>name</find>
+      <find>whitename</find>
+      <find>gameloo</find>
+      <find>blackPast</find>
+      <find>ischecked</find>
+      <find>out</find>
+      <find>ischeckmate</find>
+      <find>push</find>
+      <find>gameend</find>
+      <find>game</find>
+      <find>ischeck</find>
+      <find>setscore</find>
+      <find>icon</find>
+      <find>undo</find>
+      <find>checkmate</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/main/Bishop.java" />
+        <option value="$PROJECT_DIR$/main/Queen.java" />
+        <option value="$PROJECT_DIR$/main/Knight.java" />
+        <option value="$PROJECT_DIR$/main/Pawn.java" />
+        <option value="$PROJECT_DIR$/main/King.java" />
+        <option value="$PROJECT_DIR$/main/Rook.java" />
+        <option value="$PROJECT_DIR$/Table.java" />
+        <option value="$PROJECT_DIR$/JChess.java" />
+        <option value="$PROJECT_DIR$/com/chess/JChess.java" />
+        <option value="$PROJECT_DIR$/main/Crab.java" />
+        <option value="$PROJECT_DIR$/main/Ox.java" />
+        <option value="$PROJECT_DIR$/com/chess/gui/Table.java" />
+        <option value="$PROJECT_DIR$/com/chess/gui/GUIBoard.java" />
+        <option value="$PROJECT_DIR$/com/chess/gui/Main.java" />
+        <option value="$PROJECT_DIR$/tests/BishopTests.java" />
+        <option value="$PROJECT_DIR$/tests/CheckmateTests.java" />
+        <option value="$PROJECT_DIR$/tests/CrabTests.java" />
+        <option value="$PROJECT_DIR$/tests/KingTests.java" />
+        <option value="$PROJECT_DIR$/tests/KnightTests.java" />
+        <option value="$PROJECT_DIR$/tests/PawnTests.java" />
+        <option value="$PROJECT_DIR$/tests/OxTests.java" />
+        <option value="$PROJECT_DIR$/tests/RookTests.java" />
+        <option value="$PROJECT_DIR$/tests/QueenTests.java" />
+        <option value="$PROJECT_DIR$/tests/StalemateTests.java" />
+        <option value="$PROJECT_DIR$/main/Pieces.java" />
+        <option value="$PROJECT_DIR$/GUI/GUIPlayer.java" />
+        <option value="$PROJECT_DIR$/tests/UndoTests.java" />
+        <option value="$PROJECT_DIR$/controller/Controller.java" />
+        <option value="$PROJECT_DIR$/GUI/Main.java" />
+        <option value="$PROJECT_DIR$/GUI/GUIMenu.java" />
+        <option value="$PROJECT_DIR$/GUI/GUIBoard.java" />
+        <option value="$PROJECT_DIR$/main/Board.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="fa18-cs242-assignment1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fa18-cs242-assignment1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fa18-cs242-assignment1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fa18-cs242-assignment1" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fa18-cs242-assignment1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fa18-cs242-assignment1" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fa18-cs242-assignment1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fa18-cs242-assignment1" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fa18-cs242-assignment1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fa18-cs242-assignment1" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538781249532" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI.Main" />
+      <module name="fa18-cs242-assignment1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in fa18-cs242-assignment1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fa18-cs242-assignment1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UndoTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fa18-cs242-assignment1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.UndoTests" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UndoTests.getTurnsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fa18-cs242-assignment1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.UndoTests" />
+      <option name="METHOD_NAME" value="getTurnsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UndoTests.undoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fa18-cs242-assignment1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.UndoTests" />
+      <option name="METHOD_NAME" value="undoTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.All in fa18-cs242-assignment1" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.UndoTests" />
+      <item itemvalue="JUnit.UndoTests.undoTest" />
+      <item itemvalue="JUnit.UndoTests.getTurnsTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in fa18-cs242-assignment1" />
+        <item itemvalue="JUnit.UndoTests.getTurnsTest" />
+        <item itemvalue="JUnit.UndoTests" />
+        <item itemvalue="JUnit.UndoTests.undoTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bc869dd4-8713-44e8-8b38-84cab732ed82" name="Default Changelist" comment="" />
+      <created>1537893105932</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1537893105932</updated>
+      <workItem from="1537893108926" duration="29052000" />
+      <workItem from="1538037467586" duration="5360000" />
+      <workItem from="1538086897125" duration="995000" />
+      <workItem from="1538426049144" duration="45847000" />
+      <workItem from="1538777662973" duration="3006000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="UndoTests - 2018.10.05 at 16h 59m 31s.xml">
+      <configuration name="UndoTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UndoTests - 2018.10.05 at 16h 59m 41s.xml">
+      <configuration name="UndoTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UndoTests - 2018.10.05 at 16h 59m 55s.xml">
+      <configuration name="UndoTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_fa18-cs242-assignment1 - 2018.10.05 at 17h 00m 03s.xml">
+      <configuration name="All in fa18-cs242-assignment1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UndoTests_getTurnsTest - 2018.10.05 at 17h 01m 21s.xml">
+      <configuration name="UndoTests.getTurnsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UndoTests_getTurnsTest - 2018.10.05 at 17h 01m 53s.xml">
+      <configuration name="UndoTests.getTurnsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UndoTests_getTurnsTest - 2018.10.05 at 17h 02m 20s.xml">
+      <configuration name="UndoTests.getTurnsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_fa18-cs242-assignment1 - 2018.10.05 at 17h 02m 29s.xml">
+      <configuration name="All in fa18-cs242-assignment1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_fa18-cs242-assignment1 - 2018.10.05 at 17h 03m 07s.xml">
+      <configuration name="All in fa18-cs242-assignment1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_fa18-cs242-assignment1 - 2018.10.05 at 17h 16m 31s.xml">
+      <configuration name="All in fa18-cs242-assignment1" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="84260000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20028612" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34096387" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.08915663" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.5386266" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19742489" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23734939" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.08915663" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info active="true" anchor="right" id="Coverage" order="9" side_tool="true" visible="true" weight="0.5386266" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/com/chess/JChess.java" />
+    <entry file="file://$PROJECT_DIR$/main/Queen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="178" column="4" lean-forward="true" selection-start-line="178" selection-start-column="4" selection-end-line="182" selection-end-column="7" />
+          <folding>
+            <element signature="docComment;method#validMove#0;class#Queen#0" />
+            <element signature="method#validMove#0;class#Queen#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Rook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="126" column="5" selection-start-line="19" selection-start-column="4" selection-end-line="126" selection-end-column="5" />
+          <folding>
+            <element signature="method#validMove#0;class#Rook#0" />
+            <element signature="method#couldBeStopped#0;class#Rook#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Crab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Ox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="89" column="36" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Knight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1180">
+          <caret line="80" column="24" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
+          <folding>
+            <element signature="e#1615#1616#0" expanded="true" />
+            <element signature="e#1653#1654#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/G.java" />
+    <entry file="file://$PROJECT_DIR$/tests/CrabTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/KingTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/KnightTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/OxTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/QueenTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/Table.java" />
+    <entry file="file://$PROJECT_DIR$/main/Bishop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="128" column="39" lean-forward="true" selection-start-line="128" selection-start-column="39" selection-end-line="128" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/King.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding>
+            <element signature="e#1588#1589#0" expanded="true" />
+            <element signature="e#1626#1627#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Pieces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-287">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CheckmateTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="237" column="34" selection-start-line="237" selection-start-column="34" selection-end-line="237" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/RookTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="94" lean-forward="true" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/StalemateTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/PawnTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="21" column="48" lean-forward="true" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Pawn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="64" column="28" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/BishopTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/GUIBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="66" column="30" lean-forward="true" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getChessByPos#0;class#Board#0" />
+            <element signature="method#getChessByPos#0;class#Board#0" />
+            <element signature="docComment;method#samePlayer#0;class#Board#0" />
+            <element signature="method#samePlayer#0;class#Board#0" />
+            <element signature="docComment;method#removePieces#0;class#Board#0" />
+            <element signature="docComment;method#moveChess#0;class#Board#0" />
+            <element signature="method#moveChess#0;class#Board#0" />
+            <element signature="docComment;method#getKing#0;class#Board#0" />
+            <element signature="method#getKing#0;class#Board#0" />
+            <element signature="docComment;method#isCheckedByCrab#0;class#Board#0" />
+            <element signature="method#isCheckedByCrab#0;class#Board#0" />
+            <element signature="docComment;method#isCheckedByOx#0;class#Board#0" />
+            <element signature="method#isCheckedByOx#0;class#Board#0" />
+            <element signature="docComment;method#isCheckedByRookOrQueen#0;class#Board#0" />
+            <element signature="method#isCheckedByRookOrQueen#0;class#Board#0" />
+            <element signature="docComment;method#isCheckedByBishopOrQueen#0;class#Board#0" />
+            <element signature="method#isCheckedByBishopOrQueen#0;class#Board#0" />
+            <element signature="docComment;method#isCheckedByKnight#0;class#Board#0" />
+            <element signature="method#isCheckedByKnight#0;class#Board#0" />
+            <element signature="docComment;method#isCheckedByPawn#0;class#Board#0" />
+            <element signature="method#isCheckedByPawn#0;class#Board#0" />
+            <element signature="docComment;method#isChecked#0;class#Board#0" />
+            <element signature="method#isChecked#0;class#Board#0" />
+            <element signature="docComment;method#moveKingCanSolve#0;class#Board#0" />
+            <element signature="method#moveKingCanSolve#0;class#Board#0" />
+            <element signature="docComment;method#isCheckmate#0;class#Board#0" />
+            <element signature="docComment;method#moveKingNotChecked#0;class#Board#0" />
+            <element signature="method#moveKingNotChecked#0;class#Board#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/UndoTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/GUIMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,105 @@
+\hypertarget{classmain_1_1_pieces}{}\section{main.\+Pieces Class Reference}
+\label{classmain_1_1_pieces}\index{main.\+Pieces@{main.\+Pieces}}
+Inheritance diagram for main.\+Pieces\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{classmain_1_1_pieces}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1_pieces_aa626e806bdd56045f481edb81dc217dd}{Pieces}} (int x, int y, int player)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_pieces_a02d805a58894aca8a12be4dce0ae4125}{out\+Of\+Boundry\+Or\+Not\+Move}} (int x, int y)
+\item 
+abstract boolean \mbox{\hyperlink{classmain_1_1_pieces_ab9e56890f37271b7eddadd7b634157b1}{is\+Valid\+Move}} (int newX, int newY)
+\item 
+\mbox{\Hypertarget{classmain_1_1_pieces_ab77cb1de1e9c3f171a69655c3bf7514c}\label{classmain_1_1_pieces_ab77cb1de1e9c3f171a69655c3bf7514c}} 
+abstract boolean {\bfseries valid\+Move} (int newX, int newY, \mbox{\hyperlink{classmain_1_1_board}{Board}} board)
+\item 
+\mbox{\Hypertarget{classmain_1_1_pieces_a96608930fc453fe197d0f4cb006823ed}\label{classmain_1_1_pieces_a96608930fc453fe197d0f4cb006823ed}} 
+abstract boolean {\bfseries could\+Be\+Stopped} (int newX, int newY, \mbox{\hyperlink{classmain_1_1_board}{Board}} board)
+\item 
+\mbox{\Hypertarget{classmain_1_1_pieces_a6b3abc04fc214b01781662e4533b2b6f}\label{classmain_1_1_pieces_a6b3abc04fc214b01781662e4533b2b6f}} 
+abstract boolean {\bfseries is\+Movable} (\mbox{\hyperlink{classmain_1_1_board}{Board}} board)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmain_1_1_pieces_ab7c9b25dca64d565c9660381f35a7d1b}\label{classmain_1_1_pieces_ab7c9b25dca64d565c9660381f35a7d1b}} 
+int {\bfseries x} = -\/1
+\item 
+\mbox{\Hypertarget{classmain_1_1_pieces_a8da9a1ccb36051e345943c7f20d257f3}\label{classmain_1_1_pieces_a8da9a1ccb36051e345943c7f20d257f3}} 
+int {\bfseries y} = -\/1
+\item 
+\mbox{\Hypertarget{classmain_1_1_pieces_a04cbc94744f8532a295e2bf0201e18fa}\label{classmain_1_1_pieces_a04cbc94744f8532a295e2bf0201e18fa}} 
+int {\bfseries player} = -\/1
+\item 
+\mbox{\Hypertarget{classmain_1_1_pieces_a80df8799af3282b704681e9c1b3eb37f}\label{classmain_1_1_pieces_a80df8799af3282b704681e9c1b3eb37f}} 
+String {\bfseries type} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} is a parent class. \mbox{\hyperlink{classmain_1_1_king}{King}}, \mbox{\hyperlink{classmain_1_1_pawn}{Pawn}}, \mbox{\hyperlink{classmain_1_1_queen}{Queen}} etc. are different kind of chesses(subclass) \begin{DoxyAuthor}{Author}
+kaichenle 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmain_1_1_pieces_aa626e806bdd56045f481edb81dc217dd}\label{classmain_1_1_pieces_aa626e806bdd56045f481edb81dc217dd}} 
+\index{main\+::\+Pieces@{main\+::\+Pieces}!Pieces@{Pieces}}
+\index{Pieces@{Pieces}!main\+::\+Pieces@{main\+::\+Pieces}}
+\subsubsection{\texorpdfstring{Pieces()}{Pieces()}}
+{\footnotesize\ttfamily main.\+Pieces.\+Pieces (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor of the super class 
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em player} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmain_1_1_pieces_ab9e56890f37271b7eddadd7b634157b1}\label{classmain_1_1_pieces_ab9e56890f37271b7eddadd7b634157b1}} 
+\index{main\+::\+Pieces@{main\+::\+Pieces}!is\+Valid\+Move@{is\+Valid\+Move}}
+\index{is\+Valid\+Move@{is\+Valid\+Move}!main\+::\+Pieces@{main\+::\+Pieces}}
+\subsubsection{\texorpdfstring{is\+Valid\+Move()}{isValidMove()}}
+{\footnotesize\ttfamily abstract boolean main.\+Pieces.\+is\+Valid\+Move (\begin{DoxyParamCaption}\item[{int}]{newX,  }\item[{int}]{newY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+abstract function implemented in each subclass that check if it is valid for the pieces to move (without consider the other pieces) 
+\begin{DoxyParams}{Parameters}
+{\em newX} & x Coord \\
+\hline
+{\em newY} & y Coord \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when it is valid to move by convention 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_pieces_a02d805a58894aca8a12be4dce0ae4125}\label{classmain_1_1_pieces_a02d805a58894aca8a12be4dce0ae4125}} 
+\index{main\+::\+Pieces@{main\+::\+Pieces}!out\+Of\+Boundry\+Or\+Not\+Move@{out\+Of\+Boundry\+Or\+Not\+Move}}
+\index{out\+Of\+Boundry\+Or\+Not\+Move@{out\+Of\+Boundry\+Or\+Not\+Move}!main\+::\+Pieces@{main\+::\+Pieces}}
+\subsubsection{\texorpdfstring{out\+Of\+Boundry\+Or\+Not\+Move()}{outOfBoundryOrNotMove()}}
+{\footnotesize\ttfamily boolean main.\+Pieces.\+out\+Of\+Boundry\+Or\+Not\+Move (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+a helper function check if the chess try to move out of bound or not move 
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return true if it is not out of boundry and actually change x or y or both return false otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/Pieces.\+java\end{DoxyCompactItemize}

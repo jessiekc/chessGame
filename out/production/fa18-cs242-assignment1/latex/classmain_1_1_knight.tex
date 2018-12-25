@@ -1,0 +1,110 @@
+\hypertarget{classmain_1_1_knight}{}\section{main.\+Knight Class Reference}
+\label{classmain_1_1_knight}\index{main.\+Knight@{main.\+Knight}}
+Inheritance diagram for main.\+Knight\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmain_1_1_knight}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1_knight_a57e9a5ff0ded3f5636fccf2325616837}{Knight}} (int x, int y, int player)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_knight_a65b314ba3dee673545222a60938d41ef}{is\+Valid\+Move}} (int newX, int newY)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_knight_a883345babf8f5cf09611ac25857939c6}{valid\+Move}} (int newX, int newY, \mbox{\hyperlink{classmain_1_1_board}{Board}} board)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_knight_a350832c72d961a9ddf0c4e4c1dcb4fae}{could\+Be\+Stopped}} (int newX, int newY, \mbox{\hyperlink{classmain_1_1_board}{Board}} board)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_knight_a1f2fc54af96bddbd4e06f1860f8c4a1e}{is\+Movable}} (\mbox{\hyperlink{classmain_1_1_board}{Board}} board)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+kaichenle 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmain_1_1_knight_a57e9a5ff0ded3f5636fccf2325616837}\label{classmain_1_1_knight_a57e9a5ff0ded3f5636fccf2325616837}} 
+\index{main\+::\+Knight@{main\+::\+Knight}!Knight@{Knight}}
+\index{Knight@{Knight}!main\+::\+Knight@{main\+::\+Knight}}
+\subsubsection{\texorpdfstring{Knight()}{Knight()}}
+{\footnotesize\ttfamily main.\+Knight.\+Knight (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em x} & x\+Coord \\
+\hline
+{\em y} & y\+Coord \\
+\hline
+{\em player} & player 1 or 2 \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmain_1_1_knight_a350832c72d961a9ddf0c4e4c1dcb4fae}\label{classmain_1_1_knight_a350832c72d961a9ddf0c4e4c1dcb4fae}} 
+\index{main\+::\+Knight@{main\+::\+Knight}!could\+Be\+Stopped@{could\+Be\+Stopped}}
+\index{could\+Be\+Stopped@{could\+Be\+Stopped}!main\+::\+Knight@{main\+::\+Knight}}
+\subsubsection{\texorpdfstring{could\+Be\+Stopped()}{couldBeStopped()}}
+{\footnotesize\ttfamily boolean main.\+Knight.\+could\+Be\+Stopped (\begin{DoxyParamCaption}\item[{int}]{newX,  }\item[{int}]{newY,  }\item[{\mbox{\hyperlink{classmain_1_1_board}{Board}}}]{board }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+if any pieces could stop input bishop or queen(diaganol) piece from x,y to newX newY 
+\begin{DoxyParams}{Parameters}
+{\em newX} & end x\+Coord \\
+\hline
+{\em newY} & end y\+Coord \\
+\hline
+{\em board} & the game will play on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is a piece exists otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_knight_a1f2fc54af96bddbd4e06f1860f8c4a1e}\label{classmain_1_1_knight_a1f2fc54af96bddbd4e06f1860f8c4a1e}} 
+\index{main\+::\+Knight@{main\+::\+Knight}!is\+Movable@{is\+Movable}}
+\index{is\+Movable@{is\+Movable}!main\+::\+Knight@{main\+::\+Knight}}
+\subsubsection{\texorpdfstring{is\+Movable()}{isMovable()}}
+{\footnotesize\ttfamily boolean main.\+Knight.\+is\+Movable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1_board}{Board}}}]{board }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+helper functions check movability of knight 
+\begin{DoxyParams}{Parameters}
+{\em board} & the game will play on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the input can move otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_knight_a65b314ba3dee673545222a60938d41ef}\label{classmain_1_1_knight_a65b314ba3dee673545222a60938d41ef}} 
+\index{main\+::\+Knight@{main\+::\+Knight}!is\+Valid\+Move@{is\+Valid\+Move}}
+\index{is\+Valid\+Move@{is\+Valid\+Move}!main\+::\+Knight@{main\+::\+Knight}}
+\subsubsection{\texorpdfstring{is\+Valid\+Move()}{isValidMove()}}
+{\footnotesize\ttfamily boolean main.\+Knight.\+is\+Valid\+Move (\begin{DoxyParamCaption}\item[{int}]{newX,  }\item[{int}]{newY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+see if the chess move against convention without consider other chesses \mbox{\Hypertarget{classmain_1_1_knight_a883345babf8f5cf09611ac25857939c6}\label{classmain_1_1_knight_a883345babf8f5cf09611ac25857939c6}} 
+\index{main\+::\+Knight@{main\+::\+Knight}!valid\+Move@{valid\+Move}}
+\index{valid\+Move@{valid\+Move}!main\+::\+Knight@{main\+::\+Knight}}
+\subsubsection{\texorpdfstring{valid\+Move()}{validMove()}}
+{\footnotesize\ttfamily boolean main.\+Knight.\+valid\+Move (\begin{DoxyParamCaption}\item[{int}]{newX,  }\item[{int}]{newY,  }\item[{\mbox{\hyperlink{classmain_1_1_board}{Board}}}]{board }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Helper functions check if it is a valid path to move knight. It will be called inside move\+Chess with is\+Valid\+Move in each pieces subclass. This will check if there are pieces on the board that will influence the fact if it is valid to move chess 
+\begin{DoxyParams}{Parameters}
+{\em newX} & end y\+Coord \\
+\hline
+{\em newY} & end y\+Coord \\
+\hline
+{\em board} & the chess will play on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if valid otherwise false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/Knight.\+java\end{DoxyCompactItemize}

@@ -87,6 +87,12 @@ public class GUIBoard {
                                                 controller.mainWindow.guiMenu.setScore(controller.whiteName, controller.blackName, controller.score1,controller.score2);
                                                 controller.restartGame();
                                             }
+                                            if(controller.board.isCheckmate(1)){
+                                                JOptionPane.showMessageDialog(controller, "Black wins!");
+                                                controller.score1++;
+                                                controller.mainWindow.guiMenu.setScore(controller.whiteName, controller.blackName, controller.score1,controller.score2);
+                                                controller.restartGame();
+                                            }
                                             else if(controller.board.isStalemate(2)){
                                                 JOptionPane.showMessageDialog(controller, "Draw!");
                                                 controller.score1++;
@@ -110,6 +116,12 @@ public class GUIBoard {
                                             whitePast.push (chessToBeMoved);
                                             whitePast.push (currButton);
                                             moveIcon(1, currButton);
+                                            if(controller.board.isCheckmate(2)){
+                                                JOptionPane.showMessageDialog(controller, "White wins!");
+                                                controller.score2++;
+                                                controller.mainWindow.guiMenu.setScore(controller.whiteName, controller.blackName, controller.score1,controller.score2);
+                                                controller.restartGame();
+                                            }
                                             if(controller.board.isCheckmate(1)){
 
                                                 JOptionPane.showMessageDialog(controller, "Black wins!");

@@ -1,0 +1,110 @@
+\hypertarget{classmain_1_1_crab}{}\section{main.\+Crab Class Reference}
+\label{classmain_1_1_crab}\index{main.\+Crab@{main.\+Crab}}
+Inheritance diagram for main.\+Crab\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmain_1_1_crab}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1_crab_a99412eb33f8d2d50f338381651d2228f}{Crab}} (int x, int y, int player)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_crab_a386a6f3c85fcaf998971570aeb9ea193}{is\+Valid\+Move}} (int newX, int newY)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_crab_a726d4e88d2f0e4942ed47ff40539974e}{valid\+Move}} (int newX, int newY, \mbox{\hyperlink{classmain_1_1_board}{Board}} board)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_crab_ac72368c64c168408bb92132db1119b31}{could\+Be\+Stopped}} (int newX, int newY, \mbox{\hyperlink{classmain_1_1_board}{Board}} board)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_crab_acc3712804963dc82ffc3f155f8753b41}{is\+Movable}} (\mbox{\hyperlink{classmain_1_1_board}{Board}} board)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+kaichenle 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmain_1_1_crab_a99412eb33f8d2d50f338381651d2228f}\label{classmain_1_1_crab_a99412eb33f8d2d50f338381651d2228f}} 
+\index{main\+::\+Crab@{main\+::\+Crab}!Crab@{Crab}}
+\index{Crab@{Crab}!main\+::\+Crab@{main\+::\+Crab}}
+\subsubsection{\texorpdfstring{Crab()}{Crab()}}
+{\footnotesize\ttfamily main.\+Crab.\+Crab (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em x} & x\+Coord \\
+\hline
+{\em y} & y\+Coord \\
+\hline
+{\em player} & player 1 or 2 \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmain_1_1_crab_ac72368c64c168408bb92132db1119b31}\label{classmain_1_1_crab_ac72368c64c168408bb92132db1119b31}} 
+\index{main\+::\+Crab@{main\+::\+Crab}!could\+Be\+Stopped@{could\+Be\+Stopped}}
+\index{could\+Be\+Stopped@{could\+Be\+Stopped}!main\+::\+Crab@{main\+::\+Crab}}
+\subsubsection{\texorpdfstring{could\+Be\+Stopped()}{couldBeStopped()}}
+{\footnotesize\ttfamily boolean main.\+Crab.\+could\+Be\+Stopped (\begin{DoxyParamCaption}\item[{int}]{newX,  }\item[{int}]{newY,  }\item[{\mbox{\hyperlink{classmain_1_1_board}{Board}}}]{board }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+if any pieces could stop input \mbox{\hyperlink{classmain_1_1_crab}{Crab}} piece from x,y to newX newY 
+\begin{DoxyParams}{Parameters}
+{\em newX} & end x\+Coord \\
+\hline
+{\em newY} & end y\+Coord \\
+\hline
+{\em board} & that the chess play on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is a piece exists that can stop the chess otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_crab_acc3712804963dc82ffc3f155f8753b41}\label{classmain_1_1_crab_acc3712804963dc82ffc3f155f8753b41}} 
+\index{main\+::\+Crab@{main\+::\+Crab}!is\+Movable@{is\+Movable}}
+\index{is\+Movable@{is\+Movable}!main\+::\+Crab@{main\+::\+Crab}}
+\subsubsection{\texorpdfstring{is\+Movable()}{isMovable()}}
+{\footnotesize\ttfamily boolean main.\+Crab.\+is\+Movable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1_board}{Board}}}]{board }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+helper functions check movability of \mbox{\hyperlink{classmain_1_1_crab}{Crab}} 
+\begin{DoxyParams}{Parameters}
+{\em board} & the game will be on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the input can move otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_crab_a386a6f3c85fcaf998971570aeb9ea193}\label{classmain_1_1_crab_a386a6f3c85fcaf998971570aeb9ea193}} 
+\index{main\+::\+Crab@{main\+::\+Crab}!is\+Valid\+Move@{is\+Valid\+Move}}
+\index{is\+Valid\+Move@{is\+Valid\+Move}!main\+::\+Crab@{main\+::\+Crab}}
+\subsubsection{\texorpdfstring{is\+Valid\+Move()}{isValidMove()}}
+{\footnotesize\ttfamily boolean main.\+Crab.\+is\+Valid\+Move (\begin{DoxyParamCaption}\item[{int}]{newX,  }\item[{int}]{newY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+see if the chess move against convention without consider other chesses \mbox{\Hypertarget{classmain_1_1_crab_a726d4e88d2f0e4942ed47ff40539974e}\label{classmain_1_1_crab_a726d4e88d2f0e4942ed47ff40539974e}} 
+\index{main\+::\+Crab@{main\+::\+Crab}!valid\+Move@{valid\+Move}}
+\index{valid\+Move@{valid\+Move}!main\+::\+Crab@{main\+::\+Crab}}
+\subsubsection{\texorpdfstring{valid\+Move()}{validMove()}}
+{\footnotesize\ttfamily boolean main.\+Crab.\+valid\+Move (\begin{DoxyParamCaption}\item[{int}]{newX,  }\item[{int}]{newY,  }\item[{\mbox{\hyperlink{classmain_1_1_board}{Board}}}]{board }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Helper functions check if it is a valid path to move \mbox{\hyperlink{classmain_1_1_crab}{Crab}}. It will be called inside move\+Chess with is\+Valid\+Move in each pieces subclass. This will check if there are pieces on the board that will influence the fact if it is valid to move chess 
+\begin{DoxyParams}{Parameters}
+{\em newX} & end y\+Coord \\
+\hline
+{\em newY} & end y\+Coord \\
+\hline
+{\em board} & the chess play on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if valid otherwise false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/Crab.\+java\end{DoxyCompactItemize}

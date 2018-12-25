@@ -1,0 +1,356 @@
+\hypertarget{classmain_1_1_board}{}\section{main.\+Board Class Reference}
+\label{classmain_1_1_board}\index{main.\+Board@{main.\+Board}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmain_1_1_board_aad7eb5429a65bcf5acb31b8032844833}\label{classmain_1_1_board_aad7eb5429a65bcf5acb31b8032844833}} 
+boolean {\bfseries get\+Turns} ()
+\item 
+void \mbox{\hyperlink{classmain_1_1_board_a0b46a67725aeeab8d69ddb03735e14a0}{switch\+Turns}} ()
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_board_ad4a1b505aa20498394a5905069e0dae6}{undo\+Valid}} ()
+\item 
+void \mbox{\hyperlink{classmain_1_1_board_a31c0049120e44edd6bf7d51ded24a513}{undo}} ()
+\item 
+\mbox{\hyperlink{classmain_1_1_board_a76177c2c47c5a55f8027c511d0e1e6d2}{Board}} (boolean custom)
+\item 
+\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} \mbox{\hyperlink{classmain_1_1_board_a5c13bad815e095818515980a72f947a2}{get\+Chess\+By\+Pos}} (int x, int y)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_board_a8f84ad933ed08f44884209463be292b9}{same\+Player}} (int x, int y, int newX, int newY)
+\item 
+void \mbox{\hyperlink{classmain_1_1_board_a109f71de0ac5ff2d94814d6332f01d57}{remove\+Pieces}} (int x, int y)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_board_a6d724e617f4f3fbef0f53ea3e36011d0}{move\+Chess}} (int x, int y, int newX, int newY)
+\item 
+\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} \mbox{\hyperlink{classmain_1_1_board_a46026803c3c65d8e3cbadc70938f2f90}{get\+King}} (int player)
+\item 
+Array\+List$<$ \mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} $>$ \mbox{\hyperlink{classmain_1_1_board_a2eeeef4c31734edf9ce59fe06e5821bd}{is\+Checked\+By\+Crab}} (\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} checking\+Piece)
+\item 
+Array\+List$<$ \mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} $>$ \mbox{\hyperlink{classmain_1_1_board_a701432c0e3bfdabf18f7251f585fe709}{is\+Checked\+By\+Ox}} (\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} checking\+Piece)
+\item 
+Array\+List$<$ \mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} $>$ \mbox{\hyperlink{classmain_1_1_board_aeae5c2e64b2030c15c915b8a8f60a224}{is\+Checked\+By\+Rook\+Or\+Queen}} (\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} checking\+Piece)
+\item 
+Array\+List$<$ \mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} $>$ \mbox{\hyperlink{classmain_1_1_board_a9f09fd303ca3099fd484f62dfad93835}{is\+Checked\+By\+Bishop\+Or\+Queen}} (\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} checking\+Piece)
+\item 
+Array\+List$<$ \mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} $>$ \mbox{\hyperlink{classmain_1_1_board_aff11960be7cf5b8b39099b830dfcff03}{is\+Checked\+By\+Knight}} (\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} checking\+Piece)
+\item 
+Array\+List$<$ \mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} $>$ \mbox{\hyperlink{classmain_1_1_board_adced662a6dafccc6a509a9fb0b699018}{is\+Checked\+By\+Pawn}} (\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} checking\+Piece)
+\item 
+int \mbox{\hyperlink{classmain_1_1_board_a873fc556e24347e49daad1e98a4bebee}{is\+Checked}} (\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} king)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_board_a6ab08edc59391aee14129836dd9995a4}{move\+King\+Can\+Solve}} (\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} king, int newX, int newY)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_board_a8b249e2cc598b8255fa95047f918fbf8}{is\+Checkmate}} (int player)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_board_a0a6a45c4aab0e22538dbe2247e0fbb71}{move\+King\+Not\+Checked}} (\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} king, int new\+KingX, int new\+KingY)
+\item 
+boolean \mbox{\hyperlink{classmain_1_1_board_a4d337e9fc0aa574b694f3421d5d076d9}{is\+Stalemate}} (int player)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmain_1_1_board_ac7de2d1c025a147f1be11e3ce0ddf807}\label{classmain_1_1_board_ac7de2d1c025a147f1be11e3ce0ddf807}} 
+\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries board} = new \mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}\mbox{[}8\mbox{]}\mbox{[}8\mbox{]}
+\item 
+\mbox{\Hypertarget{classmain_1_1_board_aa738f2c6b2596cc6981129e9fb216db8}\label{classmain_1_1_board_aa738f2c6b2596cc6981129e9fb216db8}} 
+boolean {\bfseries not\+Game\+End}
+\item 
+\mbox{\Hypertarget{classmain_1_1_board_aa9469f166fe8c4af611a11372d57a1be}\label{classmain_1_1_board_aa9469f166fe8c4af611a11372d57a1be}} 
+int {\bfseries winner}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+kaichenle 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmain_1_1_board_a76177c2c47c5a55f8027c511d0e1e6d2}\label{classmain_1_1_board_a76177c2c47c5a55f8027c511d0e1e6d2}} 
+\index{main\+::\+Board@{main\+::\+Board}!Board@{Board}}
+\index{Board@{Board}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily main.\+Board.\+Board (\begin{DoxyParamCaption}\item[{boolean}]{custom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+constructor for customize board 
+\begin{DoxyParams}{Parameters}
+{\em custom} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmain_1_1_board_a5c13bad815e095818515980a72f947a2}\label{classmain_1_1_board_a5c13bad815e095818515980a72f947a2}} 
+\index{main\+::\+Board@{main\+::\+Board}!get\+Chess\+By\+Pos@{get\+Chess\+By\+Pos}}
+\index{get\+Chess\+By\+Pos@{get\+Chess\+By\+Pos}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{get\+Chess\+By\+Pos()}{getChessByPos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} main.\+Board.\+get\+Chess\+By\+Pos (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the chess by its x y 
+\begin{DoxyParams}{Parameters}
+{\em x} & x\+Coord \\
+\hline
+{\em y} & y\+Coord \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the chess piece in the grid of (x,y) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_a46026803c3c65d8e3cbadc70938f2f90}\label{classmain_1_1_board_a46026803c3c65d8e3cbadc70938f2f90}} 
+\index{main\+::\+Board@{main\+::\+Board}!get\+King@{get\+King}}
+\index{get\+King@{get\+King}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{get\+King()}{getKing()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmain_1_1_pieces}{Pieces}} main.\+Board.\+get\+King (\begin{DoxyParamCaption}\item[{int}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+get king of input player 
+\begin{DoxyParams}{Parameters}
+{\em player} & player number 1 or 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the king piece belong to player 1 or 2 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_a873fc556e24347e49daad1e98a4bebee}\label{classmain_1_1_board_a873fc556e24347e49daad1e98a4bebee}} 
+\index{main\+::\+Board@{main\+::\+Board}!is\+Checked@{is\+Checked}}
+\index{is\+Checked@{is\+Checked}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{is\+Checked()}{isChecked()}}
+{\footnotesize\ttfamily int main.\+Board.\+is\+Checked (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}}]{king }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+helper function see if the pieces is checked or not 
+\begin{DoxyParams}{Parameters}
+{\em king} & the piece be checked usually the king \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of checkers available 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_a9f09fd303ca3099fd484f62dfad93835}\label{classmain_1_1_board_a9f09fd303ca3099fd484f62dfad93835}} 
+\index{main\+::\+Board@{main\+::\+Board}!is\+Checked\+By\+Bishop\+Or\+Queen@{is\+Checked\+By\+Bishop\+Or\+Queen}}
+\index{is\+Checked\+By\+Bishop\+Or\+Queen@{is\+Checked\+By\+Bishop\+Or\+Queen}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{is\+Checked\+By\+Bishop\+Or\+Queen()}{isCheckedByBishopOrQueen()}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}$>$ main.\+Board.\+is\+Checked\+By\+Bishop\+Or\+Queen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}}]{checking\+Piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+helper functions check if the chess is checked by bishop or queen(diaganol) 
+\begin{DoxyParams}{Parameters}
+{\em checking\+Piece} & the piece be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a arraylist with all checker 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_a2eeeef4c31734edf9ce59fe06e5821bd}\label{classmain_1_1_board_a2eeeef4c31734edf9ce59fe06e5821bd}} 
+\index{main\+::\+Board@{main\+::\+Board}!is\+Checked\+By\+Crab@{is\+Checked\+By\+Crab}}
+\index{is\+Checked\+By\+Crab@{is\+Checked\+By\+Crab}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{is\+Checked\+By\+Crab()}{isCheckedByCrab()}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}$>$ main.\+Board.\+is\+Checked\+By\+Crab (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}}]{checking\+Piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+helper functions check if the chess is checked by \mbox{\hyperlink{classmain_1_1_crab}{Crab}} 
+\begin{DoxyParams}{Parameters}
+{\em checking\+Piece} & the piece be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a arraylist with all checker 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_aff11960be7cf5b8b39099b830dfcff03}\label{classmain_1_1_board_aff11960be7cf5b8b39099b830dfcff03}} 
+\index{main\+::\+Board@{main\+::\+Board}!is\+Checked\+By\+Knight@{is\+Checked\+By\+Knight}}
+\index{is\+Checked\+By\+Knight@{is\+Checked\+By\+Knight}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{is\+Checked\+By\+Knight()}{isCheckedByKnight()}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}$>$ main.\+Board.\+is\+Checked\+By\+Knight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}}]{checking\+Piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+helper functions check if the chess is checked by knight 
+\begin{DoxyParams}{Parameters}
+{\em checking\+Piece} & the piece be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a arraylist with all checker 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_a701432c0e3bfdabf18f7251f585fe709}\label{classmain_1_1_board_a701432c0e3bfdabf18f7251f585fe709}} 
+\index{main\+::\+Board@{main\+::\+Board}!is\+Checked\+By\+Ox@{is\+Checked\+By\+Ox}}
+\index{is\+Checked\+By\+Ox@{is\+Checked\+By\+Ox}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{is\+Checked\+By\+Ox()}{isCheckedByOx()}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}$>$ main.\+Board.\+is\+Checked\+By\+Ox (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}}]{checking\+Piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+helper functions check if the chess is checked by \mbox{\hyperlink{classmain_1_1_ox}{Ox}} 
+\begin{DoxyParams}{Parameters}
+{\em checking\+Piece} & the piece be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a arraylist with all checker 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_adced662a6dafccc6a509a9fb0b699018}\label{classmain_1_1_board_adced662a6dafccc6a509a9fb0b699018}} 
+\index{main\+::\+Board@{main\+::\+Board}!is\+Checked\+By\+Pawn@{is\+Checked\+By\+Pawn}}
+\index{is\+Checked\+By\+Pawn@{is\+Checked\+By\+Pawn}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{is\+Checked\+By\+Pawn()}{isCheckedByPawn()}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}$>$ main.\+Board.\+is\+Checked\+By\+Pawn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}}]{checking\+Piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+helper functions check if the chess is checked by \mbox{\hyperlink{classmain_1_1_pawn}{Pawn}} 
+\begin{DoxyParams}{Parameters}
+{\em checking\+Piece} & the piece be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a arraylist with all checker 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_aeae5c2e64b2030c15c915b8a8f60a224}\label{classmain_1_1_board_aeae5c2e64b2030c15c915b8a8f60a224}} 
+\index{main\+::\+Board@{main\+::\+Board}!is\+Checked\+By\+Rook\+Or\+Queen@{is\+Checked\+By\+Rook\+Or\+Queen}}
+\index{is\+Checked\+By\+Rook\+Or\+Queen@{is\+Checked\+By\+Rook\+Or\+Queen}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{is\+Checked\+By\+Rook\+Or\+Queen()}{isCheckedByRookOrQueen()}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}$>$ main.\+Board.\+is\+Checked\+By\+Rook\+Or\+Queen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}}]{checking\+Piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+helper functions check if the chess is checked by rook or queen(vertical and horizontal) 
+\begin{DoxyParams}{Parameters}
+{\em checking\+Piece} & the piece be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a arraylist with all checker 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_a8b249e2cc598b8255fa95047f918fbf8}\label{classmain_1_1_board_a8b249e2cc598b8255fa95047f918fbf8}} 
+\index{main\+::\+Board@{main\+::\+Board}!is\+Checkmate@{is\+Checkmate}}
+\index{is\+Checkmate@{is\+Checkmate}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{is\+Checkmate()}{isCheckmate()}}
+{\footnotesize\ttfamily boolean main.\+Board.\+is\+Checkmate (\begin{DoxyParamCaption}\item[{int}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checkmate main function\+: it will see if the king is checked if it is checked then try to move the king around to escape from being captured if we cannot avoid being checked by moving the king around then check how many checkers there are check on the king if there are two or more than there is no way to stop it in one action if there are only one chess check on the king, then try to figure out if there is a way to capture the chess block it from getting to the king
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & whose king might be checkmate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the king of the input player is checkmated otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_a4d337e9fc0aa574b694f3421d5d076d9}\label{classmain_1_1_board_a4d337e9fc0aa574b694f3421d5d076d9}} 
+\index{main\+::\+Board@{main\+::\+Board}!is\+Stalemate@{is\+Stalemate}}
+\index{is\+Stalemate@{is\+Stalemate}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{is\+Stalemate()}{isStalemate()}}
+{\footnotesize\ttfamily boolean main.\+Board.\+is\+Stalemate (\begin{DoxyParamCaption}\item[{int}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+stalemate main function\+: first check the king is not checked, if it is checked then it must be not stalement then check if the king could move without being checked if it can it is not stalement if the king cannot move then check if any one of the pieces can move 
+\begin{DoxyParams}{Parameters}
+{\em player} & needed to be check if it is in stalemate condition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the player is in stalemate condition otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_a6d724e617f4f3fbef0f53ea3e36011d0}\label{classmain_1_1_board_a6d724e617f4f3fbef0f53ea3e36011d0}} 
+\index{main\+::\+Board@{main\+::\+Board}!move\+Chess@{move\+Chess}}
+\index{move\+Chess@{move\+Chess}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{move\+Chess()}{moveChess()}}
+{\footnotesize\ttfamily boolean main.\+Board.\+move\+Chess (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{newX,  }\item[{int}]{newY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+function move pieces from (x, y) and (newX, new) it will check if it is valid before moving the piece if the movement was succeed it will return true 
+\begin{DoxyParams}{Parameters}
+{\em x} & start x\+Coord \\
+\hline
+{\em y} & start y\+Coord \\
+\hline
+{\em newX} & end y\+Coord \\
+\hline
+{\em newY} & end y\+Coord \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if moved successfully otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_a6ab08edc59391aee14129836dd9995a4}\label{classmain_1_1_board_a6ab08edc59391aee14129836dd9995a4}} 
+\index{main\+::\+Board@{main\+::\+Board}!move\+King\+Can\+Solve@{move\+King\+Can\+Solve}}
+\index{move\+King\+Can\+Solve@{move\+King\+Can\+Solve}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{move\+King\+Can\+Solve()}{moveKingCanSolve()}}
+{\footnotesize\ttfamily boolean main.\+Board.\+move\+King\+Can\+Solve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}}]{king,  }\item[{int}]{newX,  }\item[{int}]{newY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+check if move the king can make it not checked 
+\begin{DoxyParams}{Parameters}
+{\em king} & the king need to be move \\
+\hline
+{\em newX} & the new X try to move the king to \\
+\hline
+{\em newY} & the new Y try to move the king to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if move the king can make the king not being checked false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_a0a6a45c4aab0e22538dbe2247e0fbb71}\label{classmain_1_1_board_a0a6a45c4aab0e22538dbe2247e0fbb71}} 
+\index{main\+::\+Board@{main\+::\+Board}!move\+King\+Not\+Checked@{move\+King\+Not\+Checked}}
+\index{move\+King\+Not\+Checked@{move\+King\+Not\+Checked}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{move\+King\+Not\+Checked()}{moveKingNotChecked()}}
+{\footnotesize\ttfamily boolean main.\+Board.\+move\+King\+Not\+Checked (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1_pieces}{Pieces}}}]{king,  }\item[{int}]{new\+KingX,  }\item[{int}]{new\+KingY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+helper function for stalemate to see if the king can move around 
+\begin{DoxyParams}{Parameters}
+{\em king} & the king need to be checked on \\
+\hline
+{\em new\+KingX} & if the king can move to new\+KingX \\
+\hline
+{\em new\+KingY} & if the king can move to new\+KingY \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the king can move in that direction otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_a109f71de0ac5ff2d94814d6332f01d57}\label{classmain_1_1_board_a109f71de0ac5ff2d94814d6332f01d57}} 
+\index{main\+::\+Board@{main\+::\+Board}!remove\+Pieces@{remove\+Pieces}}
+\index{remove\+Pieces@{remove\+Pieces}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{remove\+Pieces()}{removePieces()}}
+{\footnotesize\ttfamily void main.\+Board.\+remove\+Pieces (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+remove the chess piece in (x, y) 
+\begin{DoxyParams}{Parameters}
+{\em x} & x\+Coord \\
+\hline
+{\em y} & y\+Coord \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmain_1_1_board_a8f84ad933ed08f44884209463be292b9}\label{classmain_1_1_board_a8f84ad933ed08f44884209463be292b9}} 
+\index{main\+::\+Board@{main\+::\+Board}!same\+Player@{same\+Player}}
+\index{same\+Player@{same\+Player}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{same\+Player()}{samePlayer()}}
+{\footnotesize\ttfamily boolean main.\+Board.\+same\+Player (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{newX,  }\item[{int}]{newY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+chess if (x, y) and (newX, newY) belongs to the same player 
+\begin{DoxyParams}{Parameters}
+{\em x} & Piece1 x\+Coord \\
+\hline
+{\em y} & Piece1 y\+Coord \\
+\hline
+{\em newX} & Piece2 x\+Coord \\
+\hline
+{\em newY} & Piece2 y\+Coord \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmain_1_1_board_a0b46a67725aeeab8d69ddb03735e14a0}\label{classmain_1_1_board_a0b46a67725aeeab8d69ddb03735e14a0}} 
+\index{main\+::\+Board@{main\+::\+Board}!switch\+Turns@{switch\+Turns}}
+\index{switch\+Turns@{switch\+Turns}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{switch\+Turns()}{switchTurns()}}
+{\footnotesize\ttfamily void main.\+Board.\+switch\+Turns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+switch player turns \mbox{\Hypertarget{classmain_1_1_board_a31c0049120e44edd6bf7d51ded24a513}\label{classmain_1_1_board_a31c0049120e44edd6bf7d51ded24a513}} 
+\index{main\+::\+Board@{main\+::\+Board}!undo@{undo}}
+\index{undo@{undo}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void main.\+Board.\+undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+undo operation on the board users can undo when ever there are available undo step but undo would applies to both users \mbox{\Hypertarget{classmain_1_1_board_ad4a1b505aa20498394a5905069e0dae6}\label{classmain_1_1_board_ad4a1b505aa20498394a5905069e0dae6}} 
+\index{main\+::\+Board@{main\+::\+Board}!undo\+Valid@{undo\+Valid}}
+\index{undo\+Valid@{undo\+Valid}!main\+::\+Board@{main\+::\+Board}}
+\subsubsection{\texorpdfstring{undo\+Valid()}{undoValid()}}
+{\footnotesize\ttfamily boolean main.\+Board.\+undo\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+check if it valid to undo \begin{DoxyReturn}{Returns}
+true if it is valid otherwise false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/Board.\+java\end{DoxyCompactItemize}
